@@ -1,0 +1,120 @@
+name: StretchBlocker
+
+options:
+  bundleIdPrefix: com.michael
+  deploymentTarget:
+    macOS: "15.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+configs:
+  Debug: debug
+  Release: release
+
+configFiles:
+  Debug: Config/Debug.xcconfig
+  Release: Config/Release.xcconfig
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MACOSX_DEPLOYMENT_TARGET: "15.0"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED: YES
+    GCC_WARN_INHIBIT_ALL_WARNINGS: NO
+    SWIFT_STRICT_CONCURRENCY: complete
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+  configs:
+    Debug:
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+      GCC_OPTIMIZATION_LEVEL: 0
+    Release:
+      SWIFT_OPTIMIZATION_LEVEL: "-O"
+      SWIFT_COMPILATION_MODE: wholemodule
+      ENABLE_HARDENED_RUNTIME: YES
+
+targets:
+  StretchBlocker:
+    type: application
+    platform: macOS
+    sources:
+      - Sources/App
+      - Sources/Overlay
+      - path: Resources
+        optional: true
+    info:
+      path: Config/Info.plist
+      properties:
+        CFBundleDevelopmentRegion: "$(DEVELOPMENT_LANGUAGE)"
+        CFBundleDisplayName: StretchBlocker
+        CFBundleExecutable: "$(EXECUTABLE_NAME)"
+        CFBundleIdentifier: "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        CFBundleInfoDictionaryVersion: "6.0"
+        CFBundleName: "$(PRODUCT_NAME)"
+        CFBundlePackageType: "$(PRODUCT_BUNDLE_PACKAGE_TYPE)"
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSMinimumSystemVersion: "$(MACOSX_DEPLOYMENT_TARGET)"
+        LSUIElement: true
+        NSPrincipalClass: NSApplication
+        NSSupportsAutomaticTermination: false
+        NSSupportsSuddenTermination: false
+    entitlements:
+      path: Config/StretchBlocker.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.files.user-selected.read-only: false
+        com.apple.security.network.client: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.michael.StretchBlocker
+        CODE_SIGN_STYLE: Automatic
+        SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
+    dependencies:
+      - target: StretchCore
+
+  StretchCore:
+    type: framework
+    platform: macOS
+    sources:
+      - Sources/Core
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.michael.StretchBlocker.Core
+
+  StretchCoreTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests/CoreTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: StretchCore
+        embed: false
+
+  StretchOverlayTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests/OverlayTests
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: StretchBlocker
+
+schemes:
+  StretchBlocker:
+    build:
+      targets:
+        StretchBlocker: all
+    test:
+      targets:
+        - StretchCoreTests
+        - StretchOverlayTests
+      gatherCoverageData: true

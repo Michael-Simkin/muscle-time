@@ -1,0 +1,5 @@
+Read `AGENTS.md` first. It is source of truth.
+
+Use `.claude/skills/*` for feature/refactor/release workflows.
+
+Hooks enforce safety and formatting. Do not bypass hooks.

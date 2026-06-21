@@ -1,0 +1,18 @@
+--swiftversion 6.3
+--indent 4
+--linebreaks lf
+--maxwidth 120
+
+--wraparguments before-first
+--wrapparameters before-first
+--wrapcollections before-first
+
+--self remove
+--semicolons never
+--trimwhitespace always
+
+--exclude .build
+--exclude .swiftpm
+--exclude DerivedData
+--exclude Build
+--exclude Generated

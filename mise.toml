@@ -1,0 +1,19 @@
+[tasks.bootstrap]
+description = "Install tools, generate project, install hooks"
+run = "scripts/bootstrap.sh"
+
+[tasks.generate]
+description = "Regenerate Xcode project"
+run = "xcodegen generate"
+
+[tasks.format]
+description = "Format Swift sources"
+run = "scripts/format.sh"
+
+[tasks.verify]
+description = "Run full local verification"
+run = "scripts/verify.sh"
+
+[tasks.build]
+description = "Build app"
+run = "scripts/build.sh"

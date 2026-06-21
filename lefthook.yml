@@ -1,0 +1,28 @@
+pre-commit:
+  parallel: false
+  jobs:
+    - name: swiftformat
+      glob: "*.swift"
+      run: swiftformat {staged_files}
+      stage_fixed: true
+
+    - name: swiftlint
+      glob: "*.swift"
+      run: swiftlint --strict
+
+    - name: actionlint
+      glob: ".github/workflows/*.{yml,yaml}"
+      run: actionlint
+
+    - name: secrets
+      run: scripts/check-secrets.sh
+
+pre-push:
+  jobs:
+    - name: verify
+      run: scripts/verify.sh
+
+post-merge:
+  jobs:
+    - name: regenerate-xcodeproj
+      run: xcodegen generate

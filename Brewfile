@@ -1,0 +1,7 @@
+brew "xcodegen"
+brew "swiftformat"
+brew "swiftlint"
+brew "lefthook"
+brew "actionlint"
+brew "xcbeautify"
+brew "jq"
