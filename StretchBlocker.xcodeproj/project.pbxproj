@@ -7,19 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4835676D96B7845F5A9074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F28B8F3973C49EE76A038E /* Assets.xcassets */; };
 		1616A8253CAAAAFD4DD125E3 /* OverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7324C864A4F669A783EFE2B5 /* OverlayController.swift */; };
 		18A76F334B37868AB4552986 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6ABC4EE86F54D91AAD0C4 /* Clock.swift */; };
 		1F53E2102CAB03A53F79D42E /* StretchCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629D46A77039FB05A6D59912 /* StretchCoreTests.swift */; };
 		43D02CD98372CFF55321B00C /* StretchCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50480039FB976C5773720C5B /* StretchCore.framework */; };
+		513F5574F85A84681907E3CB /* VoiceXavierDominatingMetallicAnnouncer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B233B206094170093321964 /* VoiceXavierDominatingMetallicAnnouncer.mp3 */; };
 		53CF696BE4C11AE71C841CCC /* ScreenObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629E38D7D07E263935A282C /* ScreenObserver.swift */; };
 		5DE6897A42D6B1512B40179A /* StretchCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50480039FB976C5773720C5B /* StretchCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60EF46B856E9F0CCED3204E2 /* StretchBlockerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8347E2E8B0D5CD57DCA891DB /* StretchBlockerApp.swift */; };
+		66180ABF143454AF1FB47EB7 /* VoicePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53DE404F7B0008F95058D6 /* VoicePlayer.swift */; };
+		686834AC573D888C4015DFFE /* VoiceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED56E3D23019A0D2F88023E /* VoiceOption.swift */; };
 		6894B25E2D7C8C3261C1E232 /* MenuBarContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E516D6B7C1A50173351AA94D /* MenuBarContent.swift */; };
 		7835993974DFA3DF73778E32 /* StretchCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50480039FB976C5773720C5B /* StretchCore.framework */; };
 		7A30B7CCD1574124050F69AC /* StretchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FBD3DEA6D5232510ADC5FE /* StretchSession.swift */; };
 		7B3F1DFB41FA771A8E919C3F /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A76827A18CBD015A203B9 /* OverlayWindow.swift */; };
+		86B0D07016A5216C3566EB5B /* StretchTimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D01F5C5E646A8AA0D79CD5 /* StretchTimerModel.swift */; };
 		98B680714860D4DE4F46E1D0 /* StretchSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78330B10C7A38E943695141C /* StretchSchedule.swift */; };
+		BD5381541A857EC3F95A4007 /* VoiceGuyUpbeatRadioAnnouncer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACFB95A4F8AA56E3B2B67716 /* VoiceGuyUpbeatRadioAnnouncer.mp3 */; };
 		E8DE41444B74EAEC98B7CE3F /* StretchOverlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8AD1C698F35BFF2A4F9AE0 /* StretchOverlayTests.swift */; };
+		F098A4FB46213628B7D27011 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BE0DD2D962FE651B86AB5D /* NotificationScheduler.swift */; };
 		FF319BA6C6940BB41E3454ED /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157BDFB1C28F13B7510A5AE9 /* SettingsStore.swift */; };
 		FF80169803623DD7C3F16335 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19F6C1396A1B262353AE774 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
@@ -67,18 +74,25 @@
 		026F02D5B864F21F7E647CB4 /* StretchOverlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StretchOverlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		157BDFB1C28F13B7510A5AE9 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		16C87465CD3391820AD4C94F /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		1ED56E3D23019A0D2F88023E /* VoiceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOption.swift; sourceTree = "<group>"; };
 		49A6ABC4EE86F54D91AAD0C4 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		50480039FB976C5773720C5B /* StretchCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StretchCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5629E38D7D07E263935A282C /* ScreenObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenObserver.swift; sourceTree = "<group>"; };
 		5B42E50832F4FD77FF8AA5F3 /* StretchCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StretchCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		604B4FFEBE437131F43AB22A /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		629D46A77039FB05A6D59912 /* StretchCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchCoreTests.swift; sourceTree = "<group>"; };
+		6B233B206094170093321964 /* VoiceXavierDominatingMetallicAnnouncer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceXavierDominatingMetallicAnnouncer.mp3; sourceTree = "<group>"; };
 		6C8AD1C698F35BFF2A4F9AE0 /* StretchOverlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchOverlayTests.swift; sourceTree = "<group>"; };
 		7324C864A4F669A783EFE2B5 /* OverlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayController.swift; sourceTree = "<group>"; };
+		74BE0DD2D962FE651B86AB5D /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		78330B10C7A38E943695141C /* StretchSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchSchedule.swift; sourceTree = "<group>"; };
 		8347E2E8B0D5CD57DCA891DB /* StretchBlockerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchBlockerApp.swift; sourceTree = "<group>"; };
 		964A76827A18CBD015A203B9 /* OverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayWindow.swift; sourceTree = "<group>"; };
+		ACFB95A4F8AA56E3B2B67716 /* VoiceGuyUpbeatRadioAnnouncer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceGuyUpbeatRadioAnnouncer.mp3; sourceTree = "<group>"; };
 		B9FBD3DEA6D5232510ADC5FE /* StretchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchSession.swift; sourceTree = "<group>"; };
+		BF53DE404F7B0008F95058D6 /* VoicePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePlayer.swift; sourceTree = "<group>"; };
+		C1D01F5C5E646A8AA0D79CD5 /* StretchTimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchTimerModel.swift; sourceTree = "<group>"; };
+		D2F28B8F3973C49EE76A038E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E19F6C1396A1B262353AE774 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E516D6B7C1A50173351AA94D /* MenuBarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +144,16 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		762A8349B1CBA31F8349B329 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D2F28B8F3973C49EE76A038E /* Assets.xcassets */,
+				ACFB95A4F8AA56E3B2B67716 /* VoiceGuyUpbeatRadioAnnouncer.mp3 */,
+				6B233B206094170093321964 /* VoiceXavierDominatingMetallicAnnouncer.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		892AB27DCEA68D04883425CA /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +165,11 @@
 		A6AE750722D145D00132A82D /* App */ = {
 			isa = PBXGroup;
 			children = (
+				74BE0DD2D962FE651B86AB5D /* NotificationScheduler.swift */,
 				8347E2E8B0D5CD57DCA891DB /* StretchBlockerApp.swift */,
+				C1D01F5C5E646A8AA0D79CD5 /* StretchTimerModel.swift */,
+				1ED56E3D23019A0D2F88023E /* VoiceOption.swift */,
+				BF53DE404F7B0008F95058D6 /* VoicePlayer.swift */,
 				B2BC20AA630E678A692EBB2D /* MenuBar */,
 				0110D68BE494D26A3C7004AD /* Settings */,
 			);
@@ -179,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				D3A3EFDFBF6E8B837A1A1988 /* Config */,
+				762A8349B1CBA31F8349B329 /* Resources */,
 				37CEF631913815B22DC834C3 /* Sources */,
 				14F99DEA8039643137C597A2 /* Tests */,
 				F8EB5A755078E34931C17D48 /* Products */,
@@ -223,6 +252,7 @@
 			buildConfigurationList = BF32964F474752E79E8A9620 /* Build configuration list for PBXNativeTarget "StretchBlocker" */;
 			buildPhases = (
 				ECCBCD72EF081D653D46467E /* Sources */,
+				D696F8018D904D3709A620C1 /* Resources */,
 				D45958191406206D20384EFD /* Frameworks */,
 				ACD926DFC631A8D6E40B11B0 /* Embed Frameworks */,
 			);
@@ -328,6 +358,19 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		D696F8018D904D3709A620C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F4835676D96B7845F5A9074 /* Assets.xcassets in Resources */,
+				BD5381541A857EC3F95A4007 /* VoiceGuyUpbeatRadioAnnouncer.mp3 in Resources */,
+				513F5574F85A84681907E3CB /* VoiceXavierDominatingMetallicAnnouncer.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1846072378F9911B22321805 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -361,11 +404,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6894B25E2D7C8C3261C1E232 /* MenuBarContent.swift in Sources */,
+				F098A4FB46213628B7D27011 /* NotificationScheduler.swift in Sources */,
 				1616A8253CAAAAFD4DD125E3 /* OverlayController.swift in Sources */,
 				7B3F1DFB41FA771A8E919C3F /* OverlayWindow.swift in Sources */,
 				53CF696BE4C11AE71C841CCC /* ScreenObserver.swift in Sources */,
 				FF80169803623DD7C3F16335 /* SettingsView.swift in Sources */,
 				60EF46B856E9F0CCED3204E2 /* StretchBlockerApp.swift in Sources */,
+				86B0D07016A5216C3566EB5B /* StretchTimerModel.swift in Sources */,
+				686834AC573D888C4015DFFE /* VoiceOption.swift in Sources */,
+				66180ABF143454AF1FB47EB7 /* VoicePlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
