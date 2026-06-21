@@ -1,5 +1,8 @@
 strict: true
 
+analyzer_rules:
+  - unused_import
+
 included:
   - Sources
   - Tests
@@ -56,20 +59,32 @@ opt_in_rules:
   - fallthrough
   - fatal_error_message
   - first_where
+  - force_cast
+  - force_try
   - force_unwrapping
+  - implicitly_unwrapped_optional
   - last_where
   - legacy_random
   - modifier_order
+  - non_overridable_class_declaration
   - operator_usage_whitespace
   - optional_enum_case_matching
   - overridden_super_call
   - prefer_self_type_over_type_of_self
   - private_action
   - private_outlet
+  - private_over_fileprivate
+  - private_subject
   - redundant_nil_coalescing
+  - redundant_type_annotation
   - sorted_imports
+  - static_over_final_class
+  - strict_fileprivate
+  - test_case_accessibility
   - toggle_bool
+  - unneeded_parentheses_in_closure_argument
   - vertical_parameter_alignment_on_call
+  - weak_delegate
   - yoda_condition
 
 disabled_rules:
@@ -105,4 +120,34 @@ custom_rules:
     included: ".*\\.swift"
     regex: "URLSession\\.shared"
     message: "Network use needs ADR. App should be local-only unless updates/sync exist."
+    severity: warning
+
+  no_ui_frameworks_in_core:
+    included: "Sources/Core/.*\\.swift"
+    regex: "^import\\s+(AppKit|SwiftUI|UserNotifications|ServiceManagement)\\b"
+    message: "Core must stay UI- and permission-free. Move platform code to App or Overlay."
+    severity: error
+
+  no_dispatchqueue_main:
+    included: ".*\\.swift"
+    regex: "DispatchQueue\\.main\\.async"
+    message: "Use MainActor isolation instead of manually hopping to DispatchQueue.main."
+    severity: warning
+
+  no_detached_tasks:
+    included: ".*\\.swift"
+    regex: "Task\\.detached"
+    message: "Detached tasks need explicit ownership/cancellation design."
+    severity: error
+
+  no_runtime_api_escape_hatches:
+    included: ".*\\.swift"
+    regex: "(NSClassFromString|objc_getClass|dlopen\\(|dlsym\\(|Selector\\(\\s*\")"
+    message: "Runtime/private API escape hatches need an ADR and review."
+    severity: error
+
+  no_print_debugging:
+    included: ".*\\.swift"
+    regex: "\\bprint\\s*\\("
+    message: "Use Logger from OSLog for diagnostics instead of print."
     severity: warning

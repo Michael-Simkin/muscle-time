@@ -14,6 +14,14 @@ pre-commit:
       glob: ".github/workflows/*.{yml,yaml}"
       run: actionlint
 
+    - name: shellcheck
+      glob: "*.sh"
+      run: scripts/lint-shell.sh
+
+    - name: app-config
+      glob: "*.{plist,entitlements,yml,yaml}"
+      run: scripts/check-app-config.sh
+
     - name: secrets
       run: scripts/check-secrets.sh
 

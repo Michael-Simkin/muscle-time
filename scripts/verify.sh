@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-xcodegen generate
+scripts/check-generated.sh
 
-swiftformat Sources Tests --lint
-swiftlint --strict
-actionlint
+scripts/lint.sh
+scripts/analyze.sh
 
 xcodebuild test \
   -scheme StretchBlocker \

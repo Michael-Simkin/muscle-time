@@ -10,6 +10,14 @@ run = "xcodegen generate"
 description = "Format Swift sources"
 run = "scripts/format.sh"
 
+[tasks.lint]
+description = "Run fast linters and policy checks"
+run = "scripts/lint.sh"
+
+[tasks.analyze]
+description = "Run Xcode static analyzer"
+run = "scripts/analyze.sh"
+
 [tasks.verify]
 description = "Run full local verification"
 run = "scripts/verify.sh"
