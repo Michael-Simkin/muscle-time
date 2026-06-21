@@ -7,6 +7,8 @@
       "Edit(./Sources/**)",
       "Edit(./Tests/**)",
       "Edit(./Config/**)",
+      "Edit(./CONTEXT.md)",
+      "Edit(./CONTEXT-MAP.md)",
       "Edit(./docs/**)",
       "Edit(./scripts/**)",
       "Bash(git status:*)",
