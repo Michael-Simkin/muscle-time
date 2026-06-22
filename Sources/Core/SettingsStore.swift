@@ -22,14 +22,14 @@ public struct SettingsStore: @unchecked Sendable {
             let savedSeconds = defaults.integer(forKey: Self.cycleLengthSecondsKey)
             let savedInterval = Duration.seconds(savedSeconds)
 
-            guard StretchSchedule.isValidInterval(savedInterval) else {
-                return StretchSchedule.defaultInterval
+            guard MuscleTimeSchedule.isValidInterval(savedInterval) else {
+                return MuscleTimeSchedule.defaultInterval
             }
 
             return savedInterval
         }
         nonmutating set {
-            defaults.set(StretchSchedule.seconds(in: newValue), forKey: Self.cycleLengthSecondsKey)
+            defaults.set(MuscleTimeSchedule.seconds(in: newValue), forKey: Self.cycleLengthSecondsKey)
         }
     }
 

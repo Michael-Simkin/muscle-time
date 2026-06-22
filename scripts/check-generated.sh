@@ -3,8 +3,8 @@ set -euo pipefail
 
 generated_paths=(
   Config/Info.plist
-  Config/StretchBlocker.entitlements
-  StretchBlocker.xcodeproj
+  Config/MuscleTime.entitlements
+  MuscleTime.xcodeproj
 )
 
 before="$(git diff -- "${generated_paths[@]}" | shasum -a 256)"

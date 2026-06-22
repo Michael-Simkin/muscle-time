@@ -1,4 +1,4 @@
-@testable import StretchBlocker
+@testable import MuscleTime
 import Testing
 
 @Test

@@ -5,7 +5,7 @@ xcodegen generate
 mkdir -p .build/logs
 
 xcodebuild clean analyze \
-  -scheme StretchBlocker \
+  -scheme MuscleTime \
   -destination 'platform=macOS' \
   -derivedDataPath .build/DerivedData \
   2>&1 \

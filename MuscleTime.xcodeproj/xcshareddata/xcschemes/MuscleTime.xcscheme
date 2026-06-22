@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "372EFDC98F27203BEF237982"
-               BuildableName = "StretchBlocker.app"
-               BlueprintName = "StretchBlocker"
-               ReferencedContainer = "container:StretchBlocker.xcodeproj">
+               BlueprintIdentifier = "B7DD707D6A66D5678D83C01B"
+               BuildableName = "MuscleTime.app"
+               BlueprintName = "MuscleTime"
+               ReferencedContainer = "container:MuscleTime.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,10 +33,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "372EFDC98F27203BEF237982"
-            BuildableName = "StretchBlocker.app"
-            BlueprintName = "StretchBlocker"
-            ReferencedContainer = "container:StretchBlocker.xcodeproj">
+            BlueprintIdentifier = "B7DD707D6A66D5678D83C01B"
+            BuildableName = "MuscleTime.app"
+            BlueprintName = "MuscleTime"
+            ReferencedContainer = "container:MuscleTime.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
@@ -45,10 +45,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8BCFBD9845322F0588F1FD87"
-               BuildableName = "StretchCoreTests.xctest"
-               BlueprintName = "StretchCoreTests"
-               ReferencedContainer = "container:StretchBlocker.xcodeproj">
+               BlueprintIdentifier = "9E51C8488741E51A068518C4"
+               BuildableName = "MuscleCoreTests.xctest"
+               BlueprintName = "MuscleCoreTests"
+               ReferencedContainer = "container:MuscleTime.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -56,10 +56,10 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9DCECB267C3B29C8BA0F218"
-               BuildableName = "StretchOverlayTests.xctest"
-               BlueprintName = "StretchOverlayTests"
-               ReferencedContainer = "container:StretchBlocker.xcodeproj">
+               BlueprintIdentifier = "0BA9E07918D40844DB39BC76"
+               BuildableName = "MuscleTimeOverlayTests.xctest"
+               BlueprintName = "MuscleTimeOverlayTests"
+               ReferencedContainer = "container:MuscleTime.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -80,10 +80,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "372EFDC98F27203BEF237982"
-            BuildableName = "StretchBlocker.app"
-            BlueprintName = "StretchBlocker"
-            ReferencedContainer = "container:StretchBlocker.xcodeproj">
+            BlueprintIdentifier = "B7DD707D6A66D5678D83C01B"
+            BuildableName = "MuscleTime.app"
+            BlueprintName = "MuscleTime"
+            ReferencedContainer = "container:MuscleTime.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -97,10 +97,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "372EFDC98F27203BEF237982"
-            BuildableName = "StretchBlocker.app"
-            BlueprintName = "StretchBlocker"
-            ReferencedContainer = "container:StretchBlocker.xcodeproj">
+            BlueprintIdentifier = "B7DD707D6A66D5678D83C01B"
+            BuildableName = "MuscleTime.app"
+            BlueprintName = "MuscleTime"
+            ReferencedContainer = "container:MuscleTime.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

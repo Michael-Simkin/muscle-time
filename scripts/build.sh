@@ -4,7 +4,7 @@ set -euo pipefail
 xcodegen generate
 
 xcodebuild build \
-  -scheme StretchBlocker \
+  -scheme MuscleTime \
   -destination 'platform=macOS' \
   -derivedDataPath .build/DerivedData \
   | xcbeautify

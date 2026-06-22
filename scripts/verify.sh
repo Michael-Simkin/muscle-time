@@ -7,7 +7,7 @@ scripts/lint.sh
 scripts/analyze.sh
 
 xcodebuild test \
-  -scheme StretchBlocker \
+  -scheme MuscleTime \
   -destination 'platform=macOS' \
   -derivedDataPath .build/DerivedData \
   | xcbeautify

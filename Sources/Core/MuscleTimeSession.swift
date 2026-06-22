@@ -1,23 +1,23 @@
 import Foundation
 
-public enum StretchSessionState: Sendable, Equatable {
+public enum MuscleTimeSessionState: Sendable, Equatable {
     case idle
     case waitingUntil(Date)
     case active(until: Date)
     case skipped(until: Date)
 }
 
-public enum StretchSessionTransition: Sendable, Equatable {
+public enum MuscleTimeSessionTransition: Sendable, Equatable {
     case none
     case breakStarted
     case breakCompleted
 }
 
-public struct StretchSession: Sendable, Equatable {
-    public private(set) var schedule: StretchSchedule
-    public private(set) var state: StretchSessionState
+public struct MuscleTimeSession: Sendable, Equatable {
+    public private(set) var schedule: MuscleTimeSchedule
+    public private(set) var state: MuscleTimeSessionState
 
-    public init(schedule: StretchSchedule = StretchSchedule()) {
+    public init(schedule: MuscleTimeSchedule = MuscleTimeSchedule()) {
         self.schedule = schedule
         state = .idle
     }
@@ -39,7 +39,7 @@ public struct StretchSession: Sendable, Equatable {
         state = .waitingUntil(adding(schedule.interval, to: date))
     }
 
-    public mutating func updateSchedule(_ schedule: StretchSchedule, at date: Date) {
+    public mutating func updateSchedule(_ schedule: MuscleTimeSchedule, at date: Date) {
         self.schedule = schedule
         reset(at: date)
     }
@@ -52,7 +52,7 @@ public struct StretchSession: Sendable, Equatable {
         reset(at: date)
     }
 
-    public mutating func advance(at date: Date) -> StretchSessionTransition {
+    public mutating func advance(at date: Date) -> MuscleTimeSessionTransition {
         switch state {
         case .idle:
             start(at: date)
@@ -62,7 +62,7 @@ public struct StretchSession: Sendable, Equatable {
                 return .none
             }
 
-            state = .active(until: adding(schedule.stretchDuration, to: date))
+            state = .active(until: adding(schedule.breakDuration, to: date))
             return .breakStarted
         case let .active(until):
             guard date >= until else {
@@ -75,6 +75,6 @@ public struct StretchSession: Sendable, Equatable {
     }
 
     private func adding(_ duration: Duration, to date: Date) -> Date {
-        date.addingTimeInterval(TimeInterval(StretchSchedule.seconds(in: duration)))
+        date.addingTimeInterval(TimeInterval(MuscleTimeSchedule.seconds(in: duration)))
     }
 }

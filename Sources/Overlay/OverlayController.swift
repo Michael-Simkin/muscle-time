@@ -56,7 +56,7 @@ final class OverlayController {
         }
 
         windows = NSScreen.screens.map { screen in
-            let rootView = StretchOverlayView(
+            let rootView = MuscleTimeOverlayView(
                 onDone: actions.onDone,
                 onPostpone: actions.onPostpone,
             )
@@ -78,7 +78,7 @@ private struct OverlayActions {
     let onPostpone: @MainActor () -> Void
 }
 
-private struct StretchOverlayView: View {
+private struct MuscleTimeOverlayView: View {
     let onDone: @MainActor () -> Void
     let onPostpone: @MainActor () -> Void
 
@@ -99,7 +99,7 @@ private struct StretchOverlayView: View {
                     .font(.system(size: 76, weight: .black, design: .rounded))
                     .foregroundStyle(.white)
 
-                Text("Stretch now. Click Done to close, or postpone by 5 minutes.")
+                Text("Move now. Click Done to close, or postpone by 5 minutes.")
                     .font(.title3)
                     .foregroundStyle(.white.opacity(0.82))
 

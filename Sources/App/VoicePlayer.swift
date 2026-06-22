@@ -6,7 +6,7 @@ import OSLog
 
 @MainActor
 final class VoicePlayer {
-    private let logger = Logger(subsystem: "com.michael.StretchBlocker", category: "VoicePlayer")
+    private let logger = Logger(subsystem: "com.michael.MuscleTime", category: "VoicePlayer")
     private var player: AVAudioPlayer?
 
     func play(voice: VoiceOption) {

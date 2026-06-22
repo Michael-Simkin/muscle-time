@@ -1,8 +1,6 @@
 ---
 name: implement-feature
-description: Implement a focused StretchBlocker feature safely.
-model: claude-opus-4-8
-effort: xhigh
+description: Implement a focused Muscle Time feature safely.
 paths:
   - "Sources/**/*.swift"
   - "Tests/**/*.swift"

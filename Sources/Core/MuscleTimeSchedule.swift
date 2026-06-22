@@ -1,18 +1,18 @@
-public struct StretchSchedule: Sendable, Equatable {
+public struct MuscleTimeSchedule: Sendable, Equatable {
     public static let defaultInterval: Duration = .seconds(2700)
     public static let minimumInterval: Duration = .seconds(600)
     public static let maximumInterval: Duration = .seconds(43200)
-    public static let defaultStretchDuration: Duration = .seconds(10)
+    public static let defaultBreakDuration: Duration = .seconds(10)
 
     public var interval: Duration
-    public var stretchDuration: Duration
+    public var breakDuration: Duration
 
     public init(
         interval: Duration = Self.defaultInterval,
-        stretchDuration: Duration = Self.defaultStretchDuration,
+        breakDuration: Duration = Self.defaultBreakDuration,
     ) {
         self.interval = interval
-        self.stretchDuration = stretchDuration
+        self.breakDuration = breakDuration
     }
 
     public static func interval(fromHHMM text: String) -> Duration? {

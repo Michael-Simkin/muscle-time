@@ -1,8 +1,6 @@
 ---
 name: refactor-safely
 description: Refactor without changing behavior.
-model: claude-opus-4-8
-effort: xhigh
 paths:
   - "Sources/**/*.swift"
   - "Tests/**/*.swift"

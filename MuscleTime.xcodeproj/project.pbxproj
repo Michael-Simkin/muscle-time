@@ -1,0 +1,781 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		047610613B6C5C3AF2BD799D /* MuscleTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E89CE75A411EB2CB591A97 /* MuscleTimeSchedule.swift */; };
+		115163C929C8A0DF6C14466D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A36481220E7A4A1714B2220 /* SettingsView.swift */; };
+		19FBD14C95AAE03E3497E376 /* ScreenObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3CEB267AF473E1776B513 /* ScreenObserver.swift */; };
+		1C908BA025D53E7243734ABE /* MuscleCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D989CEB750A37A4CC05B346 /* MuscleCore.framework */; };
+		503D48FE9F9DB39A2A9C69F2 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9841AFAA2DAFC75B338E /* StatusItemController.swift */; };
+		5F46D1A892C6C433E168106C /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA01DB922283D08C47DF660 /* NotificationScheduler.swift */; };
+		604A9D5BA47C16274237BABD /* MuscleTimeTimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F5FBA41952C35E4898943 /* MuscleTimeTimerModel.swift */; };
+		606688C3F9E09C07953B2FD8 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F6A37AB1F0AFA6F877F2E1 /* Clock.swift */; };
+		61CE2113112AE017C9256E84 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD92A227394843BE6BB5E41 /* SettingsStore.swift */; };
+		645EB23D094BB634E16B0629 /* VoiceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2972340076BE54C502EE41 /* VoiceOption.swift */; };
+		708C909A7AB9D4F2FE9F2F0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690B1E8445B180E3521B3487 /* Assets.xcassets */; };
+		8F04F050A1D08421BB486F6D /* MuscleCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D989CEB750A37A4CC05B346 /* MuscleCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AA129A737899EF2B03E3A86 /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D036424C6FC39C992DE37BC /* OverlayWindow.swift */; };
+		9FDFAEB0AF57C4C110D3893D /* VoiceXavierDominatingMetallicAnnouncer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A13B6CBAC7BC2962A779FF2B /* VoiceXavierDominatingMetallicAnnouncer.mp3 */; };
+		A6D4C992C57F1F104EE762E5 /* MuscleCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D989CEB750A37A4CC05B346 /* MuscleCore.framework */; };
+		AF28584BBD682DB2E6DA91DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C301364258A29F9180C948F /* AppDelegate.swift */; };
+		B10B3DD1F8AE1474491BA98A /* MuscleTimeOverlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DD258C08118FE78F21B74E /* MuscleTimeOverlayTests.swift */; };
+		B90F321A9E28D429198CCF6D /* MuscleTimeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E498DF1540FE7431C70EEC5C /* MuscleTimeSession.swift */; };
+		CDF68DD2ABCC3BE2C848FBE7 /* MuscleCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6EC36D26879172ED34043 /* MuscleCoreTests.swift */; };
+		E39C7F06641B7E68AD4DE0A1 /* OverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D737DDB64CA839375DDF7E /* OverlayController.swift */; };
+		E5563F0D7B162098F4BDE862 /* VoicePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75753D0AB65182FAE473A0 /* VoicePlayer.swift */; };
+		F6B5E363DD083C737F40787D /* MuscleTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E195C9A494A449451AA507B5 /* MuscleTimeApp.swift */; };
+		F6D6C529407A7F6D91F562D1 /* VoiceGuyUpbeatRadioAnnouncer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD484D0D31485F4975D7349 /* VoiceGuyUpbeatRadioAnnouncer.mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C8C79F80F9733F63CD6B77A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C58BCF1FBEE5C973215E1E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA5E3CB4116EFBE5DCD3BC46;
+			remoteInfo = MuscleCore;
+		};
+		46A3F8DF593C28C823865C17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C58BCF1FBEE5C973215E1E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA5E3CB4116EFBE5DCD3BC46;
+			remoteInfo = MuscleCore;
+		};
+		9B5190E8A9C346614673A312 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C58BCF1FBEE5C973215E1E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7DD707D6A66D5678D83C01B;
+			remoteInfo = MuscleTime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		85F0551EB155D3D3BF02418F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8F04F050A1D08421BB486F6D /* MuscleCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08DBA68356A6ACFE1D384AB6 /* MuscleCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuscleCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C301364258A29F9180C948F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		10C6EC36D26879172ED34043 /* MuscleCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleCoreTests.swift; sourceTree = "<group>"; };
+		225124BF3283540A32E0241A /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		2AB3CEB267AF473E1776B513 /* ScreenObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenObserver.swift; sourceTree = "<group>"; };
+		58346692356E44BA181FD936 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		59E89CE75A411EB2CB591A97 /* MuscleTimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTimeSchedule.swift; sourceTree = "<group>"; };
+		5BD484D0D31485F4975D7349 /* VoiceGuyUpbeatRadioAnnouncer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceGuyUpbeatRadioAnnouncer.mp3; sourceTree = "<group>"; };
+		5C75753D0AB65182FAE473A0 /* VoicePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePlayer.swift; sourceTree = "<group>"; };
+		5CD92A227394843BE6BB5E41 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		5D036424C6FC39C992DE37BC /* OverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayWindow.swift; sourceTree = "<group>"; };
+		5D989CEB750A37A4CC05B346 /* MuscleCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuscleCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		690B1E8445B180E3521B3487 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		709F5FBA41952C35E4898943 /* MuscleTimeTimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTimeTimerModel.swift; sourceTree = "<group>"; };
+		71FDE5A61AE73289B55FA049 /* MuscleTimeOverlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuscleTimeOverlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A36481220E7A4A1714B2220 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A13B6CBAC7BC2962A779FF2B /* VoiceXavierDominatingMetallicAnnouncer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceXavierDominatingMetallicAnnouncer.mp3; sourceTree = "<group>"; };
+		B4F6A37AB1F0AFA6F877F2E1 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		CBA01DB922283D08C47DF660 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		D544DED3D3C6D489D5AC395E /* MuscleTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB2972340076BE54C502EE41 /* VoiceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOption.swift; sourceTree = "<group>"; };
+		E05A9841AFAA2DAFC75B338E /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
+		E195C9A494A449451AA507B5 /* MuscleTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTimeApp.swift; sourceTree = "<group>"; };
+		E1DD258C08118FE78F21B74E /* MuscleTimeOverlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTimeOverlayTests.swift; sourceTree = "<group>"; };
+		E498DF1540FE7431C70EEC5C /* MuscleTimeSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTimeSession.swift; sourceTree = "<group>"; };
+		F2D737DDB64CA839375DDF7E /* OverlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5598A7B61B37FC903FB11E4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C908BA025D53E7243734ABE /* MuscleCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		894D26130BADA5079542609C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6D4C992C57F1F104EE762E5 /* MuscleCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		002124CCEE99568E470513D9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0C301364258A29F9180C948F /* AppDelegate.swift */,
+				E195C9A494A449451AA507B5 /* MuscleTimeApp.swift */,
+				709F5FBA41952C35E4898943 /* MuscleTimeTimerModel.swift */,
+				CBA01DB922283D08C47DF660 /* NotificationScheduler.swift */,
+				DB2972340076BE54C502EE41 /* VoiceOption.swift */,
+				5C75753D0AB65182FAE473A0 /* VoicePlayer.swift */,
+				E98DF47602CF5DD0F8D9F010 /* MenuBar */,
+				01750C5E3AE8E09366403B47 /* Settings */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		01750C5E3AE8E09366403B47 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9A36481220E7A4A1714B2220 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		19B037CC482E8124B31786C4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				002124CCEE99568E470513D9 /* App */,
+				96C66EE9AEBD3FC5306842D5 /* Core */,
+				7E152D9927A82143D560A4AD /* Overlay */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		24E2954937AE5317ACC2246A /* CoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				10C6EC36D26879172ED34043 /* MuscleCoreTests.swift */,
+			);
+			path = CoreTests;
+			sourceTree = "<group>";
+		};
+		5F002A8CDD1FED09014E192D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				690B1E8445B180E3521B3487 /* Assets.xcassets */,
+				5BD484D0D31485F4975D7349 /* VoiceGuyUpbeatRadioAnnouncer.mp3 */,
+				A13B6CBAC7BC2962A779FF2B /* VoiceXavierDominatingMetallicAnnouncer.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7E152D9927A82143D560A4AD /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				F2D737DDB64CA839375DDF7E /* OverlayController.swift */,
+				5D036424C6FC39C992DE37BC /* OverlayWindow.swift */,
+				2AB3CEB267AF473E1776B513 /* ScreenObserver.swift */,
+			);
+			path = Overlay;
+			sourceTree = "<group>";
+		};
+		85573BA755965007CABA8EC5 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				225124BF3283540A32E0241A /* Debug.xcconfig */,
+				58346692356E44BA181FD936 /* Release.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		96C66EE9AEBD3FC5306842D5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B4F6A37AB1F0AFA6F877F2E1 /* Clock.swift */,
+				59E89CE75A411EB2CB591A97 /* MuscleTimeSchedule.swift */,
+				E498DF1540FE7431C70EEC5C /* MuscleTimeSession.swift */,
+				5CD92A227394843BE6BB5E41 /* SettingsStore.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AB83CA93FEB8928F51557C45 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				24E2954937AE5317ACC2246A /* CoreTests */,
+				AB9869C73FB49AB523169298 /* OverlayTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		AB9869C73FB49AB523169298 /* OverlayTests */ = {
+			isa = PBXGroup;
+			children = (
+				E1DD258C08118FE78F21B74E /* MuscleTimeOverlayTests.swift */,
+			);
+			path = OverlayTests;
+			sourceTree = "<group>";
+		};
+		AF56743D2C147FB89552231A = {
+			isa = PBXGroup;
+			children = (
+				85573BA755965007CABA8EC5 /* Config */,
+				5F002A8CDD1FED09014E192D /* Resources */,
+				19B037CC482E8124B31786C4 /* Sources */,
+				AB83CA93FEB8928F51557C45 /* Tests */,
+				D40F507F66B4176CEF4F1074 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D40F507F66B4176CEF4F1074 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D989CEB750A37A4CC05B346 /* MuscleCore.framework */,
+				08DBA68356A6ACFE1D384AB6 /* MuscleCoreTests.xctest */,
+				D544DED3D3C6D489D5AC395E /* MuscleTime.app */,
+				71FDE5A61AE73289B55FA049 /* MuscleTimeOverlayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E98DF47602CF5DD0F8D9F010 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				E05A9841AFAA2DAFC75B338E /* StatusItemController.swift */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0BA9E07918D40844DB39BC76 /* MuscleTimeOverlayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A223672D9548A62884676BBC /* Build configuration list for PBXNativeTarget "MuscleTimeOverlayTests" */;
+			buildPhases = (
+				630FCF29A287D893AB3EBD76 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3B92F30D9691CC89CA944DD /* PBXTargetDependency */,
+			);
+			name = MuscleTimeOverlayTests;
+			packageProductDependencies = (
+			);
+			productName = MuscleTimeOverlayTests;
+			productReference = 71FDE5A61AE73289B55FA049 /* MuscleTimeOverlayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9E51C8488741E51A068518C4 /* MuscleCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0B07AFDA50B3F839CFDE15BD /* Build configuration list for PBXNativeTarget "MuscleCoreTests" */;
+			buildPhases = (
+				41E3B249E6056954CAD91C9A /* Sources */,
+				5598A7B61B37FC903FB11E4D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DFF60C8C74E4713FBA4E6E3F /* PBXTargetDependency */,
+			);
+			name = MuscleCoreTests;
+			packageProductDependencies = (
+			);
+			productName = MuscleCoreTests;
+			productReference = 08DBA68356A6ACFE1D384AB6 /* MuscleCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B7DD707D6A66D5678D83C01B /* MuscleTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E2B2C5E7064EFAA3EDCE478 /* Build configuration list for PBXNativeTarget "MuscleTime" */;
+			buildPhases = (
+				3EB9F0B80BBD278CAFD2EEA1 /* Sources */,
+				3909BD1BDC5965400C6360FF /* Resources */,
+				894D26130BADA5079542609C /* Frameworks */,
+				85F0551EB155D3D3BF02418F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				569DA7CE83A67E397424CA2B /* PBXTargetDependency */,
+			);
+			name = MuscleTime;
+			packageProductDependencies = (
+			);
+			productName = MuscleTime;
+			productReference = D544DED3D3C6D489D5AC395E /* MuscleTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA5E3CB4116EFBE5DCD3BC46 /* MuscleCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E83D290943033D4D0B38E3C /* Build configuration list for PBXNativeTarget "MuscleCore" */;
+			buildPhases = (
+				8B16707315F920D4EAF1D7F6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuscleCore;
+			packageProductDependencies = (
+			);
+			productName = MuscleCore;
+			productReference = 5D989CEB750A37A4CC05B346 /* MuscleCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C58BCF1FBEE5C973215E1E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					B7DD707D6A66D5678D83C01B = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2C5B591EC9BAE39CA1977A83 /* Build configuration list for PBXProject "MuscleTime" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = AF56743D2C147FB89552231A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D40F507F66B4176CEF4F1074 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA5E3CB4116EFBE5DCD3BC46 /* MuscleCore */,
+				9E51C8488741E51A068518C4 /* MuscleCoreTests */,
+				B7DD707D6A66D5678D83C01B /* MuscleTime */,
+				0BA9E07918D40844DB39BC76 /* MuscleTimeOverlayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3909BD1BDC5965400C6360FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				708C909A7AB9D4F2FE9F2F0C /* Assets.xcassets in Resources */,
+				F6D6C529407A7F6D91F562D1 /* VoiceGuyUpbeatRadioAnnouncer.mp3 in Resources */,
+				9FDFAEB0AF57C4C110D3893D /* VoiceXavierDominatingMetallicAnnouncer.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EB9F0B80BBD278CAFD2EEA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF28584BBD682DB2E6DA91DB /* AppDelegate.swift in Sources */,
+				F6B5E363DD083C737F40787D /* MuscleTimeApp.swift in Sources */,
+				604A9D5BA47C16274237BABD /* MuscleTimeTimerModel.swift in Sources */,
+				5F46D1A892C6C433E168106C /* NotificationScheduler.swift in Sources */,
+				E39C7F06641B7E68AD4DE0A1 /* OverlayController.swift in Sources */,
+				9AA129A737899EF2B03E3A86 /* OverlayWindow.swift in Sources */,
+				19FBD14C95AAE03E3497E376 /* ScreenObserver.swift in Sources */,
+				115163C929C8A0DF6C14466D /* SettingsView.swift in Sources */,
+				503D48FE9F9DB39A2A9C69F2 /* StatusItemController.swift in Sources */,
+				645EB23D094BB634E16B0629 /* VoiceOption.swift in Sources */,
+				E5563F0D7B162098F4BDE862 /* VoicePlayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41E3B249E6056954CAD91C9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDF68DD2ABCC3BE2C848FBE7 /* MuscleCoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630FCF29A287D893AB3EBD76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10B3DD1F8AE1474491BA98A /* MuscleTimeOverlayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B16707315F920D4EAF1D7F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				606688C3F9E09C07953B2FD8 /* Clock.swift in Sources */,
+				047610613B6C5C3AF2BD799D /* MuscleTimeSchedule.swift in Sources */,
+				B90F321A9E28D429198CCF6D /* MuscleTimeSession.swift in Sources */,
+				61CE2113112AE017C9256E84 /* SettingsStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		569DA7CE83A67E397424CA2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA5E3CB4116EFBE5DCD3BC46 /* MuscleCore */;
+			targetProxy = 1C8C79F80F9733F63CD6B77A /* PBXContainerItemProxy */;
+		};
+		B3B92F30D9691CC89CA944DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7DD707D6A66D5678D83C01B /* MuscleTime */;
+			targetProxy = 9B5190E8A9C346614673A312 /* PBXContainerItemProxy */;
+		};
+		DFF60C8C74E4713FBA4E6E3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA5E3CB4116EFBE5DCD3BC46 /* MuscleCore */;
+			targetProxy = 46A3F8DF593C28C823865C17 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1F3C2409F24489A325A2BED8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/MuscleTime.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Config/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michael.MuscleTime;
+				SDKROOT = macosx;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+			};
+			name = Debug;
+		};
+		23319F78D44D4A3E4AFE2FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michael.MuscleCoreTests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3B9615F050070C9631ADB9A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michael.MuscleTimeOverlayTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuscleTime.app/Contents/MacOS/MuscleTime";
+			};
+			name = Release;
+		};
+		5760D6C85104FDE26A285CEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Config/MuscleTime.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Config/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michael.MuscleTime;
+				SDKROOT = macosx;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+			};
+			name = Release;
+		};
+		5C2C613E57BD4512459D384A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michael.MuscleCoreTests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A4E801FA1A41B23EDA299821 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58346692356E44BA181FD936 /* Release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		C11F1D90E0DEBC6194248DDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michael.MuscleTime.Core;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		CEB06FBC497F9A1AEEBE18DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michael.MuscleTimeOverlayTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuscleTime.app/Contents/MacOS/MuscleTime";
+			};
+			name = Debug;
+		};
+		DCB4BCB268C6804CE4CD5305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.michael.MuscleTime.Core;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		F922988568C2D1A2A7F5CB82 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 225124BF3283540A32E0241A /* Debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0B07AFDA50B3F839CFDE15BD /* Build configuration list for PBXNativeTarget "MuscleCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C2C613E57BD4512459D384A /* Debug */,
+				23319F78D44D4A3E4AFE2FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2C5B591EC9BAE39CA1977A83 /* Build configuration list for PBXProject "MuscleTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F922988568C2D1A2A7F5CB82 /* Debug */,
+				A4E801FA1A41B23EDA299821 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4E83D290943033D4D0B38E3C /* Build configuration list for PBXNativeTarget "MuscleCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCB4BCB268C6804CE4CD5305 /* Debug */,
+				C11F1D90E0DEBC6194248DDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6E2B2C5E7064EFAA3EDCE478 /* Build configuration list for PBXNativeTarget "MuscleTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F3C2409F24489A325A2BED8 /* Debug */,
+				5760D6C85104FDE26A285CEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A223672D9548A62884676BBC /* Build configuration list for PBXNativeTarget "MuscleTimeOverlayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB06FBC497F9A1AEEBE18DF /* Debug */,
+				3B9615F050070C9631ADB9A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C58BCF1FBEE5C973215E1E8 /* Project object */;
+}

@@ -1,16 +1,20 @@
 import AppKit
 import Combine
 import Foundation
-import StretchCore
+import MuscleCore
+
+// swiftlint:disable:next unused_import
+import OSLog
 
 @MainActor
-final class StretchTimerModel: NSObject, ObservableObject {
+final class MuscleTimeTimerModel: NSObject, ObservableObject {
     @Published private var now: Date
-    @Published private var session: StretchSession
+    @Published private var session: MuscleTimeSession
     @Published private(set) var selectedVoiceIdentifier: String
 
     let voiceOptions = VoiceOption.all
 
+    private let logger = Logger(subsystem: "com.michael.MuscleTime", category: "TimerModel")
     private let notificationScheduler: NotificationScheduler
     private let overlayController: OverlayController
     private let settingsStore: SettingsStore
@@ -29,7 +33,7 @@ final class StretchTimerModel: NSObject, ObservableObject {
     }
 
     var savedCycleLengthText: String {
-        StretchSchedule.hhmmString(for: session.schedule.interval)
+        MuscleTimeSchedule.hhmmString(for: session.schedule.interval)
     }
 
     var statusText: String {
@@ -47,8 +51,8 @@ final class StretchTimerModel: NSObject, ObservableObject {
         let settingsStore = SettingsStore()
         let selectedVoiceIdentifier = VoiceOption.option(for: settingsStore.selectedVoiceIdentifier).id
         let startDate = Date()
-        let schedule = StretchSchedule(interval: settingsStore.cycleLength)
-        var session = StretchSession(schedule: schedule)
+        let schedule = MuscleTimeSchedule(interval: settingsStore.cycleLength)
+        var session = MuscleTimeSession(schedule: schedule)
         session.start(at: startDate)
 
         now = startDate
@@ -60,6 +64,20 @@ final class StretchTimerModel: NSObject, ObservableObject {
         voicePlayer = VoicePlayer()
 
         super.init()
+
+        let initialMenuBarText = Self.remainingText(from: session.nextBreakAt?.timeIntervalSince(now) ?? 0)
+
+        logger.info(
+            """
+            Timer model initialized. intervalSeconds=\(
+                MuscleTimeSchedule.seconds(in: schedule.interval),
+                privacy: .public,
+            ) \
+            selectedVoice=\(selectedVoiceIdentifier, privacy: .public) \
+            nextBreakAt=\(session.nextBreakAt?.description ?? "missing", privacy: .public) \
+            menuBarText=\(initialMenuBarText, privacy: .public)
+            """,
+        )
 
         self.settingsStore.selectedVoiceIdentifier = selectedVoiceIdentifier
         notificationScheduler.requestAuthorization()
@@ -74,7 +92,7 @@ final class StretchTimerModel: NSObject, ObservableObject {
     }
 
     func validationMessage(for cycleLengthText: String) -> String? {
-        if StretchSchedule.interval(fromHHMM: cycleLengthText) == nil {
+        if MuscleTimeSchedule.interval(fromHHMM: cycleLengthText) == nil {
             "Use HH:MM from 00:10 to 12:00"
         } else {
             nil
@@ -82,18 +100,18 @@ final class StretchTimerModel: NSObject, ObservableObject {
     }
 
     func canApply(cycleLengthText: String, selectedVoiceIdentifier: String) -> Bool {
-        StretchSchedule.interval(fromHHMM: cycleLengthText) != nil
+        MuscleTimeSchedule.interval(fromHHMM: cycleLengthText) != nil
             && VoiceOption.option(for: selectedVoiceIdentifier).id == selectedVoiceIdentifier
     }
 
     func applySettings(cycleLengthText: String, selectedVoiceIdentifier: String) {
-        guard let interval = StretchSchedule.interval(fromHHMM: cycleLengthText) else {
+        guard let interval = MuscleTimeSchedule.interval(fromHHMM: cycleLengthText) else {
             return
         }
 
         let voiceIdentifier = VoiceOption.option(for: selectedVoiceIdentifier).id
         let date = Date()
-        let schedule = StretchSchedule(interval: interval)
+        let schedule = MuscleTimeSchedule(interval: interval)
         var updatedSession = session
 
         settingsStore.cycleLength = interval
@@ -105,6 +123,35 @@ final class StretchTimerModel: NSObject, ObservableObject {
         voicePlayer.stop()
         overlayController.hide()
         schedulePreBreakNotification()
+    }
+
+    func applyVoiceSelection(_ selectedVoiceIdentifier: String) {
+        let voiceIdentifier = VoiceOption.option(for: selectedVoiceIdentifier).id
+
+        guard voiceIdentifier != self.selectedVoiceIdentifier else {
+            return
+        }
+
+        self.selectedVoiceIdentifier = voiceIdentifier
+        settingsStore.selectedVoiceIdentifier = voiceIdentifier
+        voicePlayer.play(voice: VoiceOption.option(for: voiceIdentifier))
+    }
+
+    func showOverlayForTesting() {
+        logger.info("Showing overlay for testing")
+
+        overlayController.show(
+            onDone: { [weak self] in
+                self?.voicePlayer.stop()
+                self?.overlayController.hide()
+            },
+            onPostpone: { [weak self] in
+                self?.voicePlayer.stop()
+                self?.overlayController.hide()
+            },
+        )
+
+        voicePlayer.play(voice: VoiceOption.option(for: selectedVoiceIdentifier))
     }
 
     func completeBreak() {
@@ -148,6 +195,7 @@ final class StretchTimerModel: NSObject, ObservableObject {
 
         RunLoop.main.add(timer, forMode: .common)
         self.timer = timer
+        logger.info("Timer started with 1 second interval.")
     }
 
     private func tick() {
@@ -162,8 +210,10 @@ final class StretchTimerModel: NSObject, ObservableObject {
         case .none:
             break
         case .breakStarted:
+            logger.info("Break started from timer transition.")
             startBreak()
         case .breakCompleted:
+            logger.info("Break auto-completed from timer transition.")
             voicePlayer.stop()
             overlayController.hide()
             schedulePreBreakNotification()
@@ -171,6 +221,7 @@ final class StretchTimerModel: NSObject, ObservableObject {
     }
 
     private func startBreak() {
+        logger.info("Showing Muscle Time overlay and playing selected voice.")
         notificationScheduler.cancelPreBreakNotification()
         overlayController.show(
             onDone: { [weak self] in
@@ -185,10 +236,12 @@ final class StretchTimerModel: NSObject, ObservableObject {
 
     private func schedulePreBreakNotification() {
         guard let nextBreakAt = session.nextBreakAt else {
+            logger.info("No next break date; canceling pre-break notification.")
             notificationScheduler.cancelPreBreakNotification()
             return
         }
 
+        logger.info("Scheduling pre-break notification. nextBreakAt=\(nextBreakAt.description, privacy: .public)")
         notificationScheduler.schedulePreBreakNotification(before: nextBreakAt)
     }
 

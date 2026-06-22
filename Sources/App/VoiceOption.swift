@@ -1,4 +1,4 @@
-import StretchCore
+import MuscleCore
 
 struct VoiceOption: Identifiable, Equatable {
     static let fallback = VoiceOption(

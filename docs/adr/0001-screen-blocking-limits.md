@@ -2,7 +2,7 @@
 
 ## Decision
 
-StretchBlocker uses public AppKit window APIs to create strong interruption overlays. It does not claim unbreakable kiosk/security behavior.
+Muscle Time uses public AppKit window APIs to create strong interruption overlays. It does not claim unbreakable kiosk/security behavior.
 
 ## Reason
 

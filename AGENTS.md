@@ -2,7 +2,7 @@
 
 ## Mission
 
-StretchBlocker is a personal macOS stretch-reminder app. It shows strong, safe interruption overlays. It must never pretend to be an unbreakable kiosk/security product.
+Muscle Time is a personal macOS muscle-break reminder app. It shows strong, safe interruption overlays. It must never pretend to be an unbreakable kiosk/security product.
 
 ## Stack
 

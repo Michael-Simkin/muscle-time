@@ -1,6 +1,6 @@
-# StretchBlocker
+# Muscle Time
 
-StretchBlocker is a local macOS menu bar app for recurring stretch breaks. The break screen says
+Muscle Time is a local macOS menu bar app for recurring muscle breaks. The break screen says
 `Muscle Time!`, plays a selected bundled voice, and gives an obvious escape path.
 
 This is not kiosk or security software. It uses public macOS APIs for strong, best-effort
@@ -32,14 +32,14 @@ scripts/build.sh
 Run it from the build output:
 
 ```sh
-open .build/DerivedData/Build/Products/Debug/StretchBlocker.app
+open .build/DerivedData/Build/Products/Debug/MuscleTime.app
 ```
 
 For normal local use, copy the built app into Applications:
 
 ```sh
-cp -R .build/DerivedData/Build/Products/Debug/StretchBlocker.app /Applications/
-open /Applications/StretchBlocker.app
+cp -R .build/DerivedData/Build/Products/Debug/MuscleTime.app /Applications/
+open /Applications/MuscleTime.app
 ```
 
 ## First Launch
@@ -98,5 +98,5 @@ mise run verify
 
 - If `xcodegen`, `swiftformat`, `swiftlint`, or `xcbeautify` is missing, run `brew bundle`.
 - If the Xcode project is stale, run `xcodegen generate`.
-- If notifications do not appear, check macOS System Settings → Notifications → StretchBlocker.
+- If notifications do not appear, check macOS System Settings → Notifications → Muscle Time.
 - If the overlay does not cover lock screen, secure prompts, or some full-screen system UI, that is expected. The app intentionally avoids private APIs and invasive permissions.

@@ -1,4 +1,4 @@
-name: StretchBlocker
+name: MuscleTime
 
 options:
   bundleIdPrefix: com.michael
@@ -38,7 +38,7 @@ settings:
       ENABLE_HARDENED_RUNTIME: YES
 
 targets:
-  StretchBlocker:
+  MuscleTime:
     type: application
     platform: macOS
     sources:
@@ -50,7 +50,7 @@ targets:
       path: Config/Info.plist
       properties:
         CFBundleDevelopmentRegion: "$(DEVELOPMENT_LANGUAGE)"
-        CFBundleDisplayName: StretchBlocker
+        CFBundleDisplayName: Muscle Time
         CFBundleExecutable: "$(EXECUTABLE_NAME)"
         CFBundleIdentifier: "$(PRODUCT_BUNDLE_IDENTIFIER)"
         CFBundleInfoDictionaryVersion: "6.0"
@@ -64,20 +64,21 @@ targets:
         NSSupportsAutomaticTermination: false
         NSSupportsSuddenTermination: false
     entitlements:
-      path: Config/StretchBlocker.entitlements
+      path: Config/MuscleTime.entitlements
       properties:
         com.apple.security.app-sandbox: true
         com.apple.security.files.user-selected.read-only: false
         com.apple.security.network.client: false
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.michael.StretchBlocker
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        PRODUCT_BUNDLE_IDENTIFIER: com.michael.MuscleTime
         CODE_SIGN_STYLE: Automatic
         SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
     dependencies:
-      - target: StretchCore
+      - target: MuscleCore
 
-  StretchCore:
+  MuscleCore:
     type: framework
     platform: macOS
     sources:
@@ -85,9 +86,9 @@ targets:
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
-        PRODUCT_BUNDLE_IDENTIFIER: com.michael.StretchBlocker.Core
+        PRODUCT_BUNDLE_IDENTIFIER: com.michael.MuscleTime.Core
 
-  StretchCoreTests:
+  MuscleCoreTests:
     type: bundle.unit-test
     platform: macOS
     sources:
@@ -96,10 +97,10 @@ targets:
       base:
         GENERATE_INFOPLIST_FILE: YES
     dependencies:
-      - target: StretchCore
+      - target: MuscleCore
         embed: false
 
-  StretchOverlayTests:
+  MuscleTimeOverlayTests:
     type: bundle.unit-test
     platform: macOS
     sources:
@@ -108,15 +109,15 @@ targets:
       base:
         GENERATE_INFOPLIST_FILE: YES
     dependencies:
-      - target: StretchBlocker
+      - target: MuscleTime
 
 schemes:
-  StretchBlocker:
+  MuscleTime:
     build:
       targets:
-        StretchBlocker: all
+        MuscleTime: all
     test:
       targets:
-        - StretchCoreTests
-        - StretchOverlayTests
+        - MuscleCoreTests
+        - MuscleTimeOverlayTests
       gatherCoverageData: true

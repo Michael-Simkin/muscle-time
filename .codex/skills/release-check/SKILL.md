@@ -1,8 +1,6 @@
 ---
 name: release-check
 description: Review signing, notarization, entitlements, and update flow.
-model: claude-opus-4-8
-effort: xhigh
 paths:
   - "Config/**"
   - "project.yml"
