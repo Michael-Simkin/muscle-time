@@ -36,6 +36,23 @@ final class MuscleTimeTimerModel: NSObject, ObservableObject {
         MuscleTimeSchedule.hhmmString(for: session.schedule.interval)
     }
 
+    /// Fraction (0...1) of the way toward the next Muscle Time; 1 means it is active now.
+    var breakProgress: Double {
+        switch session.state {
+        case .active:
+            return 1
+        case .idle:
+            return 0
+        case let .skipped(until), let .waitingUntil(until):
+            let total = Double(MuscleTimeSchedule.seconds(in: session.schedule.interval))
+            guard total > 0 else {
+                return 0
+            }
+            let remaining = max(0, until.timeIntervalSince(now))
+            return min(1, max(0, 1 - (remaining / total)))
+        }
+    }
+
     var statusText: String {
         switch session.state {
         case .active:

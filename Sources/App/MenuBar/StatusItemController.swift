@@ -132,8 +132,8 @@ final class StatusItemController: NSObject {
     }
 
     private static func menuBarImage() -> NSImage {
-        if let image = NSImage(named: "MenuBarFlexArm") {
-            image.size = NSSize(width: 16, height: 16)
+        if let image = NSImage(named: "FlexArm") {
+            image.size = NSSize(width: 18, height: 18)
             image.isTemplate = true
             return image
         }
@@ -157,9 +157,12 @@ private struct StatusBarPopoverContent: View {
     @ObservedObject var model: MuscleTimeTimerModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(model.statusText)
-                .font(.headline)
+        VStack(spacing: 12) {
+            BreakProgressRing(
+                progress: model.breakProgress,
+                timerText: model.menuBarRemainingText,
+                isActive: model.breakProgress >= 1,
+            )
 
             Divider()
 
@@ -174,5 +177,49 @@ private struct StatusBarPopoverContent: View {
         }
         .padding(12)
         .frame(width: 320)
+    }
+}
+
+private struct BreakProgressRing: View {
+    let progress: Double
+    let timerText: String
+    let isActive: Bool
+
+    private var ringGradient: AngularGradient {
+        AngularGradient(
+            colors: [
+                Color(red: 0.42, green: 0.34, blue: 0.84),
+                Color(red: 0.78, green: 0.31, blue: 0.64),
+                Color(red: 0.42, green: 0.34, blue: 0.84),
+            ],
+            center: .center,
+            startAngle: .degrees(-90),
+            endAngle: .degrees(270),
+        )
+    }
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(Color.secondary.opacity(0.18), lineWidth: 12)
+
+            Circle()
+                .trim(from: 0, to: max(0.001, progress))
+                .stroke(ringGradient, style: StrokeStyle(lineWidth: 12, lineCap: .round))
+                .rotationEffect(.degrees(-90))
+                .animation(.easeInOut(duration: 0.3), value: progress)
+
+            VStack(spacing: 2) {
+                Text(timerText)
+                    .font(.system(size: 28, weight: .bold, design: .rounded))
+                    .monospacedDigit()
+                    .foregroundStyle(.primary)
+                Text(isActive ? "Muscle Time!" : "until Muscle Time")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .frame(width: 132, height: 132)
+        .padding(.top, 4)
     }
 }

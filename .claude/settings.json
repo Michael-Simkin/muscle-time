@@ -1,49 +1,4 @@
 {
-  "permissions": {
-    "allow": [
-      "Read",
-      "Glob",
-      "Grep",
-      "Edit(./Sources/**)",
-      "Edit(./Tests/**)",
-      "Edit(./Config/**)",
-      "Edit(./CONTEXT.md)",
-      "Edit(./CONTEXT-MAP.md)",
-      "Edit(./docs/**)",
-      "Edit(./scripts/**)",
-      "Bash(git status:*)",
-      "Bash(git diff:*)",
-      "Bash(xcodegen generate)",
-      "Bash(scripts/format.sh)",
-      "Bash(scripts/verify.sh)",
-      "Bash(scripts/build.sh)"
-    ],
-    "ask": [
-      "Edit(./project.yml)",
-      "Edit(./AGENTS.md)",
-      "Edit(./CLAUDE.md)",
-      "Edit(./.claude/**)",
-      "Edit(./.codex/**)",
-      "Edit(./.github/workflows/**)",
-      "Bash(brew bundle:*)",
-      "Bash(git commit:*)",
-      "Bash(git tag:*)"
-    ],
-    "deny": [
-      "Edit(./*.xcodeproj/**)",
-      "Edit(./.git/**)",
-      "Read(./secrets/**)",
-      "Bash(rm -rf:*)",
-      "Bash(sudo:*)",
-      "Bash(git push:*)",
-      "Bash(gh secret:*)",
-      "Bash(security:*)",
-      "Bash(codesign:*)",
-      "Bash(xcrun notarytool:*)",
-      "Bash(curl:*)",
-      "Bash(wget:*)"
-    ]
-  },
   "hooks": {
     "PreToolUse": [
       {

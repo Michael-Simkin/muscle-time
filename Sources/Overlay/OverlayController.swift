@@ -67,6 +67,11 @@ final class OverlayController {
             return OverlayWindow(screen: screen, contentView: hostingView)
         }
 
+        // Activate so the overlay can become key and respond to its keyboard
+        // shortcuts; without this an accessory app's borderless window stays
+        // unfocused.
+        NSApplication.shared.activate(ignoringOtherApps: true)
+
         for window in windows {
             window.makeKeyAndOrderFront(nil)
         }
@@ -86,22 +91,44 @@ private struct MuscleTimeOverlayView: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    Color.black.opacity(0.94),
-                    Color(red: 0.10, green: 0.08, blue: 0.16).opacity(0.96),
+                    Color(red: 0.10, green: 0.07, blue: 0.20).opacity(0.97),
+                    Color(red: 0.20, green: 0.08, blue: 0.24).opacity(0.97),
+                    Color(red: 0.06, green: 0.05, blue: 0.12).opacity(0.97),
                 ],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing,
             )
             .ignoresSafeArea()
 
-            VStack(spacing: 28) {
-                Text("Muscle Time!")
-                    .font(.system(size: 76, weight: .black, design: .rounded))
-                    .foregroundStyle(.white)
+            // Soft brand-colored glow behind the card.
+            RadialGradient(
+                colors: [Color(red: 0.55, green: 0.35, blue: 0.95).opacity(0.45), .clear],
+                center: .center,
+                startRadius: 0,
+                endRadius: 460,
+            )
+            .ignoresSafeArea()
 
-                Text("Move now. Click Done to close, or postpone by 5 minutes.")
-                    .font(.title3)
-                    .foregroundStyle(.white.opacity(0.82))
+            VStack(spacing: 28) {
+                Image("FlexArm")
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+                    .foregroundStyle(.white)
+                    .shadow(color: Color(red: 0.78, green: 0.31, blue: 0.64).opacity(0.7), radius: 36)
+
+                VStack(spacing: 12) {
+                    Text("Muscle Time!")
+                        .font(.system(size: 68, weight: .black, design: .rounded))
+                        .foregroundStyle(.white)
+
+                    Text("Stand up, flex, and move. Click Done when you're back, or postpone 5 minutes.")
+                        .font(.title3)
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.white.opacity(0.82))
+                        .frame(maxWidth: 520)
+                }
 
                 HStack(spacing: 16) {
                     Button("Done") {
@@ -116,9 +143,22 @@ private struct MuscleTimeOverlayView: View {
                     }
                     .buttonStyle(.bordered)
                     .controlSize(.large)
+                    .keyboardShortcut(.cancelAction)
                 }
+                .tint(Color(red: 0.62, green: 0.40, blue: 0.95))
+                .padding(.top, 4)
             }
-            .padding(48)
+            .padding(.vertical, 56)
+            .padding(.horizontal, 72)
+            .background(
+                RoundedRectangle(cornerRadius: 36, style: .continuous)
+                    .fill(Color.white.opacity(0.06))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 36, style: .continuous)
+                            .strokeBorder(Color.white.opacity(0.12), lineWidth: 1),
+                    ),
+            )
+            .shadow(color: .black.opacity(0.45), radius: 40, y: 16)
         }
     }
 }

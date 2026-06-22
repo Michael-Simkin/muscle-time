@@ -26,6 +26,7 @@
 		B10B3DD1F8AE1474491BA98A /* MuscleTimeOverlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DD258C08118FE78F21B74E /* MuscleTimeOverlayTests.swift */; };
 		B90F321A9E28D429198CCF6D /* MuscleTimeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E498DF1540FE7431C70EEC5C /* MuscleTimeSession.swift */; };
 		CDF68DD2ABCC3BE2C848FBE7 /* MuscleCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6EC36D26879172ED34043 /* MuscleCoreTests.swift */; };
+		DAEFACC4953D427A29FE421D /* VoiceAvivMuscleTime.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8ADBF677FD78541FE397B343 /* VoiceAvivMuscleTime.m4a */; };
 		E39C7F06641B7E68AD4DE0A1 /* OverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D737DDB64CA839375DDF7E /* OverlayController.swift */; };
 		E5563F0D7B162098F4BDE862 /* VoicePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75753D0AB65182FAE473A0 /* VoicePlayer.swift */; };
 		F6B5E363DD083C737F40787D /* MuscleTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E195C9A494A449451AA507B5 /* MuscleTimeApp.swift */; };
@@ -86,6 +87,7 @@
 		690B1E8445B180E3521B3487 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		709F5FBA41952C35E4898943 /* MuscleTimeTimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTimeTimerModel.swift; sourceTree = "<group>"; };
 		71FDE5A61AE73289B55FA049 /* MuscleTimeOverlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuscleTimeOverlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ADBF677FD78541FE397B343 /* VoiceAvivMuscleTime.m4a */ = {isa = PBXFileReference; path = VoiceAvivMuscleTime.m4a; sourceTree = "<group>"; };
 		9A36481220E7A4A1714B2220 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A13B6CBAC7BC2962A779FF2B /* VoiceXavierDominatingMetallicAnnouncer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceXavierDominatingMetallicAnnouncer.mp3; sourceTree = "<group>"; };
 		B4F6A37AB1F0AFA6F877F2E1 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				690B1E8445B180E3521B3487 /* Assets.xcassets */,
+				8ADBF677FD78541FE397B343 /* VoiceAvivMuscleTime.m4a */,
 				5BD484D0D31485F4975D7349 /* VoiceGuyUpbeatRadioAnnouncer.mp3 */,
 				A13B6CBAC7BC2962A779FF2B /* VoiceXavierDominatingMetallicAnnouncer.mp3 */,
 			);
@@ -367,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				708C909A7AB9D4F2FE9F2F0C /* Assets.xcassets in Resources */,
+				DAEFACC4953D427A29FE421D /* VoiceAvivMuscleTime.m4a in Resources */,
 				F6D6C529407A7F6D91F562D1 /* VoiceGuyUpbeatRadioAnnouncer.mp3 in Resources */,
 				9FDFAEB0AF57C4C110D3893D /* VoiceXavierDominatingMetallicAnnouncer.mp3 in Resources */,
 			);

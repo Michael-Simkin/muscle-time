@@ -12,7 +12,7 @@ final class VoicePlayer {
     func play(voice: VoiceOption) {
         stop()
 
-        guard let url = Bundle.main.url(forResource: voice.resourceName, withExtension: "mp3") else {
+        guard let url = Bundle.main.url(forResource: voice.resourceName, withExtension: voice.fileExtension) else {
             logger.error("Missing voice resource: \(voice.resourceName, privacy: .public)")
             return
         }

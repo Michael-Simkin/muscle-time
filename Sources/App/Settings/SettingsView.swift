@@ -1,10 +1,16 @@
 import SwiftUI
 
 struct SettingsView: View {
+    private enum CycleField {
+        case hours
+        case minutes
+    }
+
     @ObservedObject var model: MuscleTimeTimerModel
     @State private var cycleHoursText: String
     @State private var cycleMinutesText: String
     @State private var selectedVoiceIdentifier: String
+    @FocusState private var focusedField: CycleField?
 
     init(model: MuscleTimeTimerModel) {
         self.model = model
@@ -35,8 +41,13 @@ struct SettingsView: View {
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 60)
                         .multilineTextAlignment(.center)
+                        .focused($focusedField, equals: .hours)
                         .onChange(of: cycleHoursText) { _, newValue in
-                            cycleHoursText = Self.sanitizedHoursInput(newValue)
+                            let sanitized = Self.sanitizedHoursInput(newValue)
+                            cycleHoursText = sanitized
+                            if focusedField == .hours, sanitized.count == 2 {
+                                focusedField = .minutes
+                            }
                         }
 
                     Text(":")
@@ -47,6 +58,7 @@ struct SettingsView: View {
                         .textFieldStyle(.roundedBorder)
                         .frame(width: 60)
                         .multilineTextAlignment(.center)
+                        .focused($focusedField, equals: .minutes)
                         .onChange(of: cycleMinutesText) { _, newValue in
                             cycleMinutesText = Self.sanitizedMinutesInput(newValue)
                         }
@@ -65,13 +77,19 @@ struct SettingsView: View {
                     Text(voice.displayName).tag(voice.id)
                 }
             }
-            .pickerStyle(.radioGroup)
+            .pickerStyle(.menu)
+            .labelsHidden()
             .onChange(of: selectedVoiceIdentifier) { _, newValue in
                 model.applyVoiceSelection(newValue)
             }
 
             HStack {
+                Button("Show Overlay") {
+                    model.showOverlayForTesting()
+                }
+
                 Spacer()
+
                 Button("Apply") {
                     guard let cycleLengthText else { return }
                     model.applySettings(
@@ -85,13 +103,9 @@ struct SettingsView: View {
                 ))
                 .keyboardShortcut(.defaultAction)
             }
-
-            Button("Show Overlay") {
-                model.showOverlayForTesting()
-            }
         }
         .padding(12)
-        .frame(width: 300, height: 240)
+        .frame(width: 300, height: 210)
         .onAppear {
             let (hours, minutes) = Self.parseHoursAndMinutes(from: model.savedCycleLengthText)
             cycleHoursText = Self.twoDigitString(hours)

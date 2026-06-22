@@ -22,4 +22,14 @@ final class OverlayWindow: NSWindow {
         isReleasedWhenClosed = false
         setFrame(screen.frame, display: true)
     }
+
+    /// Borderless windows cannot become key by default, which would disable the
+    /// overlay's keyboard shortcuts (Return to finish, Escape to postpone).
+    override var canBecomeKey: Bool {
+        true
+    }
+
+    override var canBecomeMain: Bool {
+        true
+    }
 }
