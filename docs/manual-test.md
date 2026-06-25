@@ -10,7 +10,12 @@
 
 ## Overlay
 
-- Overlay shows a large flexed-arm icon and a styled card with Done/Postpone.
+- Overlay shows a spin wheel (Push-ups / Pull-ups / Plank / Treadmill) in a styled card with Done/Postpone.
+- Done is disabled until the wheel has been spun; Postpone (Esc) stays enabled as the escape path.
+- Tapping "Spin the wheel" spins the wheel and it visibly lands with the top pointer on the announced exercise.
+- The subtitle updates to the chosen exercise after the spin; "Spin again" re-spins.
+- When the wheel lands, a success chime plays and a voice announces the chosen exercise.
+- Clicking Done plays the completion flourish, which finishes even as the overlay fades out.
 - Single monitor: overlay covers full screen.
 - Multiple monitors: overlay appears on every screen.
 - External monitor attach while idle: next break covers new screen.

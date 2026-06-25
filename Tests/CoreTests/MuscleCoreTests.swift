@@ -3,6 +3,18 @@ import Foundation
 import Testing
 
 @Test
+func `wheel offers exactly the four expected exercises`() {
+    #expect(Exercise.allCases == [.pushUps, .pullUps, .plank, .treadmill])
+}
+
+@Test
+func `every exercise has a non-empty display name`() {
+    for exercise in Exercise.allCases {
+        #expect(!exercise.displayName.isEmpty)
+    }
+}
+
+@Test
 func `muscle time schedule stores durations`() {
     let schedule = MuscleTimeSchedule(interval: .seconds(2700), breakDuration: .seconds(60))
 

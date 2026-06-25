@@ -1,4 +1,5 @@
 import AppKit
+import MuscleCore
 import SwiftUI
 
 @MainActor
@@ -87,6 +88,17 @@ private struct MuscleTimeOverlayView: View {
     let onDone: @MainActor () -> Void
     let onPostpone: @MainActor () -> Void
 
+    @State private var selectedExercise: Exercise?
+    @State private var soundPlayer = SoundEffectPlayer()
+
+    private var subtitle: String {
+        if let selectedExercise {
+            "Your move: \(selectedExercise.displayName)! Do it, then click Done."
+        } else {
+            "Spin the wheel to pick your exercise."
+        }
+    }
+
     var body: some View {
         ZStack {
             LinearGradient(
@@ -109,25 +121,23 @@ private struct MuscleTimeOverlayView: View {
             )
             .ignoresSafeArea()
 
-            VStack(spacing: 28) {
-                Image("FlexArm")
-                    .renderingMode(.template)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 150, height: 150)
-                    .foregroundStyle(.white)
-                    .shadow(color: Color(red: 0.78, green: 0.31, blue: 0.64).opacity(0.7), radius: 36)
-
-                VStack(spacing: 12) {
+            VStack(spacing: 24) {
+                VStack(spacing: 10) {
                     Text("Muscle Time!")
-                        .font(.system(size: 68, weight: .black, design: .rounded))
+                        .font(.system(size: 52, weight: .black, design: .rounded))
                         .foregroundStyle(.white)
 
-                    Text("Stand up, flex, and move. Click Done when you're back, or postpone 5 minutes.")
+                    Text(subtitle)
                         .font(.title3)
                         .multilineTextAlignment(.center)
                         .foregroundStyle(.white.opacity(0.82))
                         .frame(maxWidth: 520)
+                }
+
+                SpinWheelView { exercise in
+                    selectedExercise = exercise
+                    soundPlayer.play(resource: "SoundExerciseSelected", fileExtension: "mp3")
+                    soundPlayer.play(resource: exercise.announcementResource, fileExtension: "mp3")
                 }
 
                 HStack(spacing: 16) {
@@ -137,6 +147,7 @@ private struct MuscleTimeOverlayView: View {
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .keyboardShortcut(.defaultAction)
+                    .disabled(selectedExercise == nil)
 
                     Button("Postpone 5 min") {
                         onPostpone()
@@ -148,8 +159,8 @@ private struct MuscleTimeOverlayView: View {
                 .tint(Color(red: 0.62, green: 0.40, blue: 0.95))
                 .padding(.top, 4)
             }
-            .padding(.vertical, 56)
-            .padding(.horizontal, 72)
+            .padding(.vertical, 48)
+            .padding(.horizontal, 64)
             .background(
                 RoundedRectangle(cornerRadius: 36, style: .continuous)
                     .fill(Color.white.opacity(0.06))

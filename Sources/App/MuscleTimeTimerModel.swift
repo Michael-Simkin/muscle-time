@@ -19,6 +19,7 @@ final class MuscleTimeTimerModel: NSObject, ObservableObject {
     private let overlayController: OverlayController
     private let settingsStore: SettingsStore
     private let voicePlayer: VoicePlayer
+    private let effectPlayer = SoundEffectPlayer()
     private var timer: Timer?
 
     var menuBarRemainingText: String {
@@ -183,6 +184,7 @@ final class MuscleTimeTimerModel: NSObject, ObservableObject {
         updatedSession.completeBreak(at: date)
         session = updatedSession
         voicePlayer.stop()
+        effectPlayer.play(resource: "SoundBreakComplete", fileExtension: "mp3")
         overlayController.hide()
         schedulePreBreakNotification()
     }

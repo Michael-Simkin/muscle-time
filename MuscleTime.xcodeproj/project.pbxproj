@@ -8,16 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		047610613B6C5C3AF2BD799D /* MuscleTimeSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E89CE75A411EB2CB591A97 /* MuscleTimeSchedule.swift */; };
+		07F0C10F72D986155B7ECDC3 /* SoundBreakComplete.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 69160032C2C841F179510767 /* SoundBreakComplete.mp3 */; };
 		115163C929C8A0DF6C14466D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A36481220E7A4A1714B2220 /* SettingsView.swift */; };
 		19FBD14C95AAE03E3497E376 /* ScreenObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3CEB267AF473E1776B513 /* ScreenObserver.swift */; };
 		1C908BA025D53E7243734ABE /* MuscleCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D989CEB750A37A4CC05B346 /* MuscleCore.framework */; };
+		3417693650FCBCB5B1E52D2C /* SoundExerciseSelected.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5B671CE6624AB27ED9ED05F8 /* SoundExerciseSelected.mp3 */; };
 		503D48FE9F9DB39A2A9C69F2 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05A9841AFAA2DAFC75B338E /* StatusItemController.swift */; };
 		5F46D1A892C6C433E168106C /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA01DB922283D08C47DF660 /* NotificationScheduler.swift */; };
 		604A9D5BA47C16274237BABD /* MuscleTimeTimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709F5FBA41952C35E4898943 /* MuscleTimeTimerModel.swift */; };
 		606688C3F9E09C07953B2FD8 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F6A37AB1F0AFA6F877F2E1 /* Clock.swift */; };
 		61CE2113112AE017C9256E84 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD92A227394843BE6BB5E41 /* SettingsStore.swift */; };
 		645EB23D094BB634E16B0629 /* VoiceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2972340076BE54C502EE41 /* VoiceOption.swift */; };
+		6F3A19E4893B962CDEE9FCC6 /* SpinWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D32BA268481724B78E0CD9 /* SpinWheelView.swift */; };
 		708C909A7AB9D4F2FE9F2F0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690B1E8445B180E3521B3487 /* Assets.xcassets */; };
+		86B6A9F5040CC5D0999592D9 /* VoiceExercisePushUps.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7A3B27F03BB4FA6C84110E22 /* VoiceExercisePushUps.mp3 */; };
+		8E053BD81B4A97B6029AFDB2 /* VoiceExerciseTreadmill.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01495A89E65A3AB008FC960 /* VoiceExerciseTreadmill.mp3 */; };
 		8F04F050A1D08421BB486F6D /* MuscleCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D989CEB750A37A4CC05B346 /* MuscleCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9AA129A737899EF2B03E3A86 /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D036424C6FC39C992DE37BC /* OverlayWindow.swift */; };
 		9FDFAEB0AF57C4C110D3893D /* VoiceXavierDominatingMetallicAnnouncer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A13B6CBAC7BC2962A779FF2B /* VoiceXavierDominatingMetallicAnnouncer.mp3 */; };
@@ -25,12 +30,16 @@
 		AF28584BBD682DB2E6DA91DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C301364258A29F9180C948F /* AppDelegate.swift */; };
 		B10B3DD1F8AE1474491BA98A /* MuscleTimeOverlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DD258C08118FE78F21B74E /* MuscleTimeOverlayTests.swift */; };
 		B90F321A9E28D429198CCF6D /* MuscleTimeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = E498DF1540FE7431C70EEC5C /* MuscleTimeSession.swift */; };
+		C6577A2F754ABC4D4E00FAFF /* SoundEffectPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650B953C82FFF74B2FF05468 /* SoundEffectPlayer.swift */; };
 		CDF68DD2ABCC3BE2C848FBE7 /* MuscleCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C6EC36D26879172ED34043 /* MuscleCoreTests.swift */; };
 		DAEFACC4953D427A29FE421D /* VoiceAvivMuscleTime.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 8ADBF677FD78541FE397B343 /* VoiceAvivMuscleTime.m4a */; };
 		E39C7F06641B7E68AD4DE0A1 /* OverlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D737DDB64CA839375DDF7E /* OverlayController.swift */; };
+		E429114AB0674419959F5DEB /* VoiceExercisePlank.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2623E949948F08C401B31633 /* VoiceExercisePlank.mp3 */; };
 		E5563F0D7B162098F4BDE862 /* VoicePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C75753D0AB65182FAE473A0 /* VoicePlayer.swift */; };
+		EC78180B5709E0B4DD05BF5A /* VoiceExercisePullUps.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9751BC9B9A91CCFE5D2DA24D /* VoiceExercisePullUps.mp3 */; };
 		F6B5E363DD083C737F40787D /* MuscleTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E195C9A494A449451AA507B5 /* MuscleTimeApp.swift */; };
 		F6D6C529407A7F6D91F562D1 /* VoiceGuyUpbeatRadioAnnouncer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5BD484D0D31485F4975D7349 /* VoiceGuyUpbeatRadioAnnouncer.mp3 */; };
+		FFBBD5B5FCB380C32D269BF1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9ADCB87748E9F1974E7DAA /* Exercise.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,24 +85,33 @@
 		0C301364258A29F9180C948F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10C6EC36D26879172ED34043 /* MuscleCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleCoreTests.swift; sourceTree = "<group>"; };
 		225124BF3283540A32E0241A /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		24D32BA268481724B78E0CD9 /* SpinWheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinWheelView.swift; sourceTree = "<group>"; };
+		2623E949948F08C401B31633 /* VoiceExercisePlank.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceExercisePlank.mp3; sourceTree = "<group>"; };
 		2AB3CEB267AF473E1776B513 /* ScreenObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenObserver.swift; sourceTree = "<group>"; };
+		4B9ADCB87748E9F1974E7DAA /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		58346692356E44BA181FD936 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		59E89CE75A411EB2CB591A97 /* MuscleTimeSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTimeSchedule.swift; sourceTree = "<group>"; };
+		5B671CE6624AB27ED9ED05F8 /* SoundExerciseSelected.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SoundExerciseSelected.mp3; sourceTree = "<group>"; };
 		5BD484D0D31485F4975D7349 /* VoiceGuyUpbeatRadioAnnouncer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceGuyUpbeatRadioAnnouncer.mp3; sourceTree = "<group>"; };
 		5C75753D0AB65182FAE473A0 /* VoicePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePlayer.swift; sourceTree = "<group>"; };
 		5CD92A227394843BE6BB5E41 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		5D036424C6FC39C992DE37BC /* OverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayWindow.swift; sourceTree = "<group>"; };
 		5D989CEB750A37A4CC05B346 /* MuscleCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuscleCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		650B953C82FFF74B2FF05468 /* SoundEffectPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectPlayer.swift; sourceTree = "<group>"; };
 		690B1E8445B180E3521B3487 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69160032C2C841F179510767 /* SoundBreakComplete.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SoundBreakComplete.mp3; sourceTree = "<group>"; };
 		709F5FBA41952C35E4898943 /* MuscleTimeTimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTimeTimerModel.swift; sourceTree = "<group>"; };
 		71FDE5A61AE73289B55FA049 /* MuscleTimeOverlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuscleTimeOverlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A3B27F03BB4FA6C84110E22 /* VoiceExercisePushUps.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceExercisePushUps.mp3; sourceTree = "<group>"; };
 		8ADBF677FD78541FE397B343 /* VoiceAvivMuscleTime.m4a */ = {isa = PBXFileReference; path = VoiceAvivMuscleTime.m4a; sourceTree = "<group>"; };
+		9751BC9B9A91CCFE5D2DA24D /* VoiceExercisePullUps.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceExercisePullUps.mp3; sourceTree = "<group>"; };
 		9A36481220E7A4A1714B2220 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A13B6CBAC7BC2962A779FF2B /* VoiceXavierDominatingMetallicAnnouncer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceXavierDominatingMetallicAnnouncer.mp3; sourceTree = "<group>"; };
 		B4F6A37AB1F0AFA6F877F2E1 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		CBA01DB922283D08C47DF660 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		D544DED3D3C6D489D5AC395E /* MuscleTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB2972340076BE54C502EE41 /* VoiceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOption.swift; sourceTree = "<group>"; };
+		E01495A89E65A3AB008FC960 /* VoiceExerciseTreadmill.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VoiceExerciseTreadmill.mp3; sourceTree = "<group>"; };
 		E05A9841AFAA2DAFC75B338E /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
 		E195C9A494A449451AA507B5 /* MuscleTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTimeApp.swift; sourceTree = "<group>"; };
 		E1DD258C08118FE78F21B74E /* MuscleTimeOverlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleTimeOverlayTests.swift; sourceTree = "<group>"; };
@@ -166,7 +184,13 @@
 			isa = PBXGroup;
 			children = (
 				690B1E8445B180E3521B3487 /* Assets.xcassets */,
+				69160032C2C841F179510767 /* SoundBreakComplete.mp3 */,
+				5B671CE6624AB27ED9ED05F8 /* SoundExerciseSelected.mp3 */,
 				8ADBF677FD78541FE397B343 /* VoiceAvivMuscleTime.m4a */,
+				2623E949948F08C401B31633 /* VoiceExercisePlank.mp3 */,
+				9751BC9B9A91CCFE5D2DA24D /* VoiceExercisePullUps.mp3 */,
+				7A3B27F03BB4FA6C84110E22 /* VoiceExercisePushUps.mp3 */,
+				E01495A89E65A3AB008FC960 /* VoiceExerciseTreadmill.mp3 */,
 				5BD484D0D31485F4975D7349 /* VoiceGuyUpbeatRadioAnnouncer.mp3 */,
 				A13B6CBAC7BC2962A779FF2B /* VoiceXavierDominatingMetallicAnnouncer.mp3 */,
 			);
@@ -179,6 +203,8 @@
 				F2D737DDB64CA839375DDF7E /* OverlayController.swift */,
 				5D036424C6FC39C992DE37BC /* OverlayWindow.swift */,
 				2AB3CEB267AF473E1776B513 /* ScreenObserver.swift */,
+				650B953C82FFF74B2FF05468 /* SoundEffectPlayer.swift */,
+				24D32BA268481724B78E0CD9 /* SpinWheelView.swift */,
 			);
 			path = Overlay;
 			sourceTree = "<group>";
@@ -196,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				B4F6A37AB1F0AFA6F877F2E1 /* Clock.swift */,
+				4B9ADCB87748E9F1974E7DAA /* Exercise.swift */,
 				59E89CE75A411EB2CB591A97 /* MuscleTimeSchedule.swift */,
 				E498DF1540FE7431C70EEC5C /* MuscleTimeSession.swift */,
 				5CD92A227394843BE6BB5E41 /* SettingsStore.swift */,
@@ -370,7 +397,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				708C909A7AB9D4F2FE9F2F0C /* Assets.xcassets in Resources */,
+				07F0C10F72D986155B7ECDC3 /* SoundBreakComplete.mp3 in Resources */,
+				3417693650FCBCB5B1E52D2C /* SoundExerciseSelected.mp3 in Resources */,
 				DAEFACC4953D427A29FE421D /* VoiceAvivMuscleTime.m4a in Resources */,
+				E429114AB0674419959F5DEB /* VoiceExercisePlank.mp3 in Resources */,
+				EC78180B5709E0B4DD05BF5A /* VoiceExercisePullUps.mp3 in Resources */,
+				86B6A9F5040CC5D0999592D9 /* VoiceExercisePushUps.mp3 in Resources */,
+				8E053BD81B4A97B6029AFDB2 /* VoiceExerciseTreadmill.mp3 in Resources */,
 				F6D6C529407A7F6D91F562D1 /* VoiceGuyUpbeatRadioAnnouncer.mp3 in Resources */,
 				9FDFAEB0AF57C4C110D3893D /* VoiceXavierDominatingMetallicAnnouncer.mp3 in Resources */,
 			);
@@ -391,6 +424,8 @@
 				9AA129A737899EF2B03E3A86 /* OverlayWindow.swift in Sources */,
 				19FBD14C95AAE03E3497E376 /* ScreenObserver.swift in Sources */,
 				115163C929C8A0DF6C14466D /* SettingsView.swift in Sources */,
+				C6577A2F754ABC4D4E00FAFF /* SoundEffectPlayer.swift in Sources */,
+				6F3A19E4893B962CDEE9FCC6 /* SpinWheelView.swift in Sources */,
 				503D48FE9F9DB39A2A9C69F2 /* StatusItemController.swift in Sources */,
 				645EB23D094BB634E16B0629 /* VoiceOption.swift in Sources */,
 				E5563F0D7B162098F4BDE862 /* VoicePlayer.swift in Sources */,
@@ -418,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				606688C3F9E09C07953B2FD8 /* Clock.swift in Sources */,
+				FFBBD5B5FCB380C32D269BF1 /* Exercise.swift in Sources */,
 				047610613B6C5C3AF2BD799D /* MuscleTimeSchedule.swift in Sources */,
 				B90F321A9E28D429198CCF6D /* MuscleTimeSession.swift in Sources */,
 				61CE2113112AE017C9256E84 /* SettingsStore.swift in Sources */,
@@ -583,7 +619,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -717,7 +753,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
