@@ -10,11 +10,14 @@
 
 ## Overlay
 
-- Overlay shows a spin wheel (Push-ups / Pull-ups / Plank / Treadmill) in a styled card with Done/Postpone.
-- Done is disabled until the wheel has been spun; Postpone (Esc) stays enabled as the escape path.
-- Tapping "Spin the wheel" spins the wheel and it visibly lands with the top pointer on the announced exercise.
-- The subtitle updates to the chosen exercise after the spin; "Spin again" re-spins.
+- Overlay shows a large spin wheel (Push-ups / Pull-ups / Plank / Treadmill) in a styled card with Done/Postpone.
+- The wheel spins automatically shortly after the overlay appears — there is no spin button.
+- A roulette tick sound plays as the wheel turns: fast clicks while spinning quickly, spacing out as it slows.
+- Done is disabled until the wheel has landed; Postpone (Esc) stays enabled as the escape path.
+- The wheel visibly lands with the top pointer on the announced exercise.
+- The subtitle updates to the chosen exercise after the spin.
 - When the wheel lands, a success chime plays and a voice announces the chosen exercise.
+- Multiple monitors: only the main screen plays the tick/chime/voice (no stacked audio).
 - Clicking Done plays the completion flourish, which finishes even as the overlay fades out.
 - Single monitor: overlay covers full screen.
 - Multiple monitors: overlay appears on every screen.

@@ -60,6 +60,7 @@ final class OverlayController {
             let rootView = MuscleTimeOverlayView(
                 onDone: actions.onDone,
                 onPostpone: actions.onPostpone,
+                playsSound: screen == NSScreen.screens.first,
             )
             let hostingView = NSHostingView(rootView: rootView)
             hostingView.frame = screen.frame
@@ -87,6 +88,7 @@ private struct OverlayActions {
 private struct MuscleTimeOverlayView: View {
     let onDone: @MainActor () -> Void
     let onPostpone: @MainActor () -> Void
+    let playsSound: Bool
 
     @State private var selectedExercise: Exercise?
     @State private var soundPlayer = SoundEffectPlayer()
@@ -95,7 +97,7 @@ private struct MuscleTimeOverlayView: View {
         if let selectedExercise {
             "Your move: \(selectedExercise.displayName)! Do it, then click Done."
         } else {
-            "Spin the wheel to pick your exercise."
+            "Spinning for your exercise…"
         }
     }
 
@@ -122,23 +124,28 @@ private struct MuscleTimeOverlayView: View {
             .ignoresSafeArea()
 
             VStack(spacing: 24) {
-                VStack(spacing: 10) {
+                VStack(spacing: 12) {
                     Text("Muscle Time!")
-                        .font(.system(size: 52, weight: .black, design: .rounded))
+                        .font(.system(size: 64, weight: .black, design: .rounded))
                         .foregroundStyle(.white)
 
                     Text(subtitle)
-                        .font(.title3)
+                        .font(.title2)
                         .multilineTextAlignment(.center)
                         .foregroundStyle(.white.opacity(0.82))
-                        .frame(maxWidth: 520)
+                        .frame(maxWidth: 600)
                 }
 
-                SpinWheelView { exercise in
-                    selectedExercise = exercise
-                    soundPlayer.play(resource: "SoundExerciseSelected", fileExtension: "mp3")
-                    soundPlayer.play(resource: exercise.announcementResource, fileExtension: "mp3")
-                }
+                SpinWheelView(
+                    onResult: { exercise in
+                        selectedExercise = exercise
+                        if playsSound {
+                            soundPlayer.play(resource: "SoundExerciseSelected", fileExtension: "mp3")
+                            soundPlayer.play(resource: exercise.announcementResource, fileExtension: "mp3")
+                        }
+                    },
+                    playsSound: playsSound,
+                )
 
                 HStack(spacing: 16) {
                     Button("Done") {

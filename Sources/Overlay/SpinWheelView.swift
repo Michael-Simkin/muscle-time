@@ -1,7 +1,8 @@
 import MuscleCore
 import SwiftUI
 
-/// A roulette-style wheel that spins and lands on a random exercise.
+/// A roulette-style wheel that spins automatically and lands on a random
+/// exercise.
 ///
 /// The wheel draws one wedge per `Exercise` in case order. Wedge `i` is
 /// centered at angle `i * segmentAngle`, measured from due east and increasing
@@ -10,17 +11,32 @@ import SwiftUI
 /// `i` under the pointer the wheel must rotate so that `i * segmentAngle`
 /// reaches 270°, i.e. by `270 - i * segmentAngle` degrees (plus whole turns for
 /// the spinning effect).
+///
+/// Rotation is driven manually through `TimelineView(.animation)` rather than
+/// `withAnimation` so the visible angle and the tick sound share one easing
+/// curve: ticks fire on every peg the wheel crosses, so they race at the start
+/// and space out as the wheel slows, matching its real speed.
 struct SpinWheelView: View {
     /// Called with the chosen exercise once the wheel finishes spinning.
     let onResult: @MainActor (Exercise) -> Void
+    /// Whether this wheel should play the tick sound (only the main screen does,
+    /// so multiple displays don't stack the audio).
+    let playsSound: Bool
 
     @State private var rotation = 0.0
-    @State private var isSpinning = false
-    @State private var hasResult = false
+    @State private var spinStart: Date?
+    @State private var spinFrom = 0.0
+    @State private var spinDelta = 0.0
+    @State private var chosen: Exercise?
+    @State private var lastPeg = 0
+    @State private var didStart = false
+    @State private var ratchet = RatchetPlayer(resource: "SoundTick", fileExtension: "wav")
 
     private let exercises = Exercise.allCases
-    private let spinDuration = 3.5
-    private let diameter = 320.0
+    private let spinDuration = 4.0
+    private let fullSpins = 5.0
+    private let pegDegrees = 30.0
+    private let diameter = 460.0
 
     private var segmentAngle: Double {
         360 / Double(exercises.count)
@@ -34,29 +50,36 @@ struct SpinWheelView: View {
     ]
 
     var body: some View {
-        VStack(spacing: 22) {
-            ZStack {
+        ZStack {
+            if let spinStart {
+                TimelineView(.animation) { timeline in
+                    let elapsed = timeline.date.timeIntervalSince(spinStart)
+                    let angle = angle(forElapsed: elapsed)
+
+                    wheel
+                        .rotationEffect(.degrees(angle))
+                        .onChange(of: peg(for: angle)) { _, newPeg in
+                            advanceTicks(to: newPeg)
+                        }
+                        .onChange(of: elapsed >= spinDuration) { _, finished in
+                            if finished { finishSpin() }
+                        }
+                }
+            } else {
                 wheel
                     .rotationEffect(.degrees(rotation))
-
-                Circle()
-                    .fill(Color.white)
-                    .frame(width: 26, height: 26)
-                    .shadow(color: .black.opacity(0.4), radius: 4)
-
-                pointer
-                    .offset(y: -(diameter / 2) - 2)
             }
-            .frame(width: diameter, height: diameter)
 
-            Button(hasResult ? "Spin again" : "Spin the wheel") {
-                spin()
-            }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
-            .tint(Color(red: 0.62, green: 0.40, blue: 0.95))
-            .disabled(isSpinning)
+            Circle()
+                .fill(Color.white)
+                .frame(width: 34, height: 34)
+                .shadow(color: .black.opacity(0.4), radius: 4)
+
+            pointer
+                .offset(y: -(diameter / 2) - 2)
         }
+        .frame(width: diameter, height: diameter)
+        .onAppear(perform: startIfNeeded)
     }
 
     private var wheel: some View {
@@ -78,7 +101,7 @@ struct SpinWheelView: View {
                 )
 
                 Text(exercise.displayName)
-                    .font(.headline)
+                    .font(.system(size: 26, weight: .bold, design: .rounded))
                     .foregroundStyle(.white)
                     .shadow(color: .black.opacity(0.45), radius: 2)
                     .offset(
@@ -95,36 +118,60 @@ struct SpinWheelView: View {
 
     private var pointer: some View {
         Image(systemName: "arrowtriangle.down.fill")
-            .font(.system(size: 34))
+            .font(.system(size: 44))
             .foregroundStyle(.white)
             .shadow(color: .black.opacity(0.45), radius: 4)
     }
 
-    private func spin() {
-        guard !isSpinning else { return }
+    /// Eased angle for a given elapsed time. Uses a cubic ease-out so the wheel
+    /// decelerates smoothly to its resting angle.
+    private func angle(forElapsed elapsed: Double) -> Double {
+        let progress = min(max(elapsed / spinDuration, 0), 1)
+        let eased = 1 - pow(1 - progress, 3)
+        return spinFrom + spinDelta * eased
+    }
 
+    private func peg(for angle: Double) -> Int {
+        Int(((angle - spinFrom) / pegDegrees).rounded(.down))
+    }
+
+    private func advanceTicks(to newPeg: Int) {
+        guard newPeg > lastPeg else { return }
+        lastPeg = newPeg
+        if playsSound { ratchet.tick() }
+    }
+
+    private func startIfNeeded() {
+        guard !didStart else { return }
+        didStart = true
+
+        // Brief pause so the wheel registers before it launches.
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(500))
+            spin()
+        }
+    }
+
+    private func spin() {
         let chosenIndex = Int.random(in: 0 ..< exercises.count)
-        let chosen = exercises[chosenIndex]
+        chosen = exercises[chosenIndex]
 
         let residue = (270 - Double(chosenIndex) * segmentAngle)
             .truncatingRemainder(dividingBy: 360)
         let normalizedResidue = (residue + 360).truncatingRemainder(dividingBy: 360)
 
-        let fullSpins = 5.0
-        let currentBase = (rotation / 360).rounded(.down) * 360
-        var target = currentBase + fullSpins * 360 + normalizedResidue
-        if target <= rotation {
-            target += 360
-        }
+        spinFrom = rotation
+        spinDelta = fullSpins * 360 + normalizedResidue
+        lastPeg = 0
+        spinStart = .now
+    }
 
-        isSpinning = true
-        withAnimation(.easeOut(duration: spinDuration)) {
-            rotation = target
-        } completion: {
-            isSpinning = false
-            hasResult = true
-            onResult(chosen)
-        }
+    private func finishSpin() {
+        guard let chosen, spinStart != nil else { return }
+
+        rotation = spinFrom + spinDelta
+        spinStart = nil
+        onResult(chosen)
     }
 }
 
