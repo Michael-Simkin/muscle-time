@@ -21,6 +21,7 @@ final class MuscleTimeTimerModel: NSObject, ObservableObject {
     private let voicePlayer: VoicePlayer
     private let effectPlayer = SoundEffectPlayer()
     private var timer: Timer?
+    private var sleepStartedAt: Date?
 
     var menuBarRemainingText: String {
         switch session.state {
@@ -103,7 +104,13 @@ final class MuscleTimeTimerModel: NSObject, ObservableObject {
         startTimer()
         NSWorkspace.shared.notificationCenter.addObserver(
             self,
-            selector: #selector(resetAfterWake),
+            selector: #selector(noteWillSleep),
+            name: NSWorkspace.willSleepNotification,
+            object: nil,
+        )
+        NSWorkspace.shared.notificationCenter.addObserver(
+            self,
+            selector: #selector(resumeAfterWake),
             name: NSWorkspace.didWakeNotification,
             object: nil,
         )
@@ -264,16 +271,38 @@ final class MuscleTimeTimerModel: NSObject, ObservableObject {
         notificationScheduler.schedulePreBreakNotification(before: nextBreakAt)
     }
 
-    @objc private func resetAfterWake() {
-        let date = Date()
-        var updatedSession = session
+    @objc private func noteWillSleep() {
+        sleepStartedAt = Date()
+        logger.info("System will sleep; pausing the countdown.")
+    }
 
+    /// On wake, exclude the time spent asleep by shifting the pending deadline
+    /// forward, so the countdown continues from where it was before sleep
+    /// rather than resetting or firing immediately.
+    @objc private func resumeAfterWake() {
+        let date = Date()
+
+        guard let sleepStartedAt else {
+            logger.info("Woke without a recorded sleep start; leaving the countdown unchanged.")
+            return
+        }
+
+        self.sleepStartedAt = nil
+        let sleepDuration = date.timeIntervalSince(sleepStartedAt)
+
+        guard sleepDuration > 0 else {
+            return
+        }
+
+        var updatedSession = session
+        updatedSession.shiftDeadline(by: sleepDuration)
         now = date
-        updatedSession.reset(at: date)
         session = updatedSession
-        voicePlayer.stop()
-        overlayController.hide()
         schedulePreBreakNotification()
+
+        logger.info(
+            "Woke after \(sleepDuration, privacy: .public)s asleep; countdown resumed where it left off.",
+        )
     }
 
     private static func remainingText(from timeInterval: TimeInterval) -> String {

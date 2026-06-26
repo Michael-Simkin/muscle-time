@@ -44,6 +44,22 @@ public struct MuscleTimeSession: Sendable, Equatable {
         reset(at: date)
     }
 
+    /// Moves the pending deadline later by `interval` seconds. Used to exclude
+    /// time the Mac spent asleep so the countdown resumes where it left off
+    /// instead of elapsing during sleep. No-op while idle (no deadline to move).
+    public mutating func shiftDeadline(by interval: TimeInterval) {
+        switch state {
+        case .idle:
+            break
+        case let .waitingUntil(date):
+            state = .waitingUntil(date.addingTimeInterval(interval))
+        case let .active(until):
+            state = .active(until: until.addingTimeInterval(interval))
+        case let .skipped(date):
+            state = .skipped(until: date.addingTimeInterval(interval))
+        }
+    }
+
     public mutating func postpone(at date: Date, by duration: Duration) {
         state = .skipped(until: adding(duration, to: date))
     }

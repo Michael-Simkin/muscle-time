@@ -74,3 +74,19 @@ func `session postpone waits for the postpone duration`() {
 
     #expect(session.nextBreakAt == date.addingTimeInterval(300))
 }
+
+@Test
+func `sleeping shifts the deadline so the countdown resumes where it left off`() {
+    let startDate = Date(timeIntervalSinceReferenceDate: 1000)
+    var session = MuscleTimeSession(schedule: MuscleTimeSchedule(interval: .seconds(600), breakDuration: .seconds(10)))
+
+    session.start(at: startDate)
+    // 100s in, 500s remain; the Mac then sleeps for 10_000s.
+    let sleepStart = startDate.addingTimeInterval(100)
+    let wake = sleepStart.addingTimeInterval(10000)
+    session.shiftDeadline(by: wake.timeIntervalSince(sleepStart))
+
+    // The break must not have fired during sleep, and 500s should still remain.
+    #expect(session.advance(at: wake) == .none)
+    #expect(session.nextBreakAt == wake.addingTimeInterval(500))
+}
